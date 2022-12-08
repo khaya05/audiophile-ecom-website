@@ -9,7 +9,7 @@ function App() {
       <Routes>
         <Route path="/" exact element={<Home />} />
         <Route path="headphones" element={<Headphones />} />
-        <Route path="speaker" element={<Speakers />} />
+        <Route path="speakers" element={<Speakers />} />
         <Route path="earphones" element={<Earphones />} />
         <Route path="product/:id" element={<Product />} />
         <Route path='*' element = {<Error />} />

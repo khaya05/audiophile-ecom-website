@@ -3,7 +3,14 @@
   --orange-main-hover: hsla(22, 93%, 75%, 1);
   --light-gray: hsla(0, 0%, 94%, 1);
   --very-light-gray: hsla(0, 0%, 98%, 1);
-  --dark: hsla(0, 0%, 6%, 1)
+  --01-white: hsla(0, 0%, 100%, 0.1);
+  --dark: hsla(0, 0%, 6%, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
