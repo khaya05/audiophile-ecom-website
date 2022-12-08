@@ -1,0 +1,105 @@
+:root {
+  --orange-main: hsla(21, 65%, 57%, 1);
+  --orange-main-hover: hsla(22, 93%, 75%, 1);
+  --light-gray: hsla(0, 0%, 94%, 1);
+  --very-light-gray: hsla(0, 0%, 98%, 1);
+  --dark: hsla(0, 0%, 6%, 1)
+}
+
+body {
+  font-family: 'Manrope', sans-serif;
+}
+
+h1,
+h2,
+h3,
+article h2 {
+  color: black;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+header h1,
+header h2,
+article h2 {
+  color: white;
+}
+
+h2 span {
+  color: var(--orange-main);
+}
+
+h1,
+article h2 {
+  font-size: 36px;
+  line-height: 40px;
+  text-align: center;
+  letter-spacing: 1.28571px;
+}
+
+h2 {
+  font-size: 28px;
+  line-height: 38px;
+  letter-spacing: 1px;
+}
+
+h3 {
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: 1.07143px;
+}
+
+h4 {
+  font-size: 14px;
+  color: var(--orange-main);
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 19px;
+  letter-spacing: 10px;
+  text-align: center;
+}
+
+header h4 {
+  color: white;
+  opacity: 0.5;
+}
+
+p {
+  font-size: 15px;
+  color: black;
+  opacity: 0.5;
+  line-height: 25px;
+}
+
+header p,
+footer p,
+article p {
+  color: white;
+  opacity: 0.75;
+}
+
+@media (min-width: 48em) {
+  h1,
+  article h2 {
+    font-size: 56px;
+    line-height: 58px;
+    text-align: center;
+    letter-spacing: 2px;
+  }
+  h2 {
+    font-size: 40px;
+    line-height: 44px;
+    letter-spacing: 1.42857px;
+  }
+
+  h4 {
+    font-size: 56px;
+  }
+}
+
+nav,
+header,
+footer {
+  background-color: var(--dark);
+}
