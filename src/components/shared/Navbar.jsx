@@ -13,7 +13,9 @@ function Navbar() {
             <FaBars />
           </div>
 
-          <p>audiophile</p>
+          <Link to="/" className="logo">
+            audiophile
+          </Link>
         </div>
 
         <ul>
@@ -70,11 +72,21 @@ const Nav = styled.nav`
     width: calc(50% + 64px);
   }
 
-  p {
+  .logo {
     color: white;
     opacity: 1;
     font-size: 25px;
     font-weight: 700;
+    text-decoration: none;
+  }
+
+  ul {
+    display: none;
+  }
+
+  div[role='button']:hover {
+    cursor: pointer;
+    /* color: var(--main-orange); */
   }
 
   @media (min-width: 48em) {
@@ -134,11 +146,12 @@ const Nav = styled.nav`
       color: var(--orange-main);
     }
 
-    .container{
+    .container {
       max-width: 1110px;
       margin: 0 auto;
       padding-inline: 0;
     }
   }
 `;
+
 export default Navbar;
