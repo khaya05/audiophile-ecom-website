@@ -1,9 +1,10 @@
-import { Hero } from '../components'
+import { Categories, Hero } from '../components'
 
 function Home() {
   return (
     <>
       <Hero />
+      <Categories />
     </>
   )
 }
