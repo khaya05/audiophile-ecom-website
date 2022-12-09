@@ -1,5 +1,5 @@
 import React from 'react'
-import ShopBtn from './ShopBtn'
+import ShopBtn from '../UI/ShopBtn'
 
 function Category({img,path}) {
   return (

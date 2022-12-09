@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { HeroBgImg } from '../../assets';
-import SeeProduct from '../shared/SeeProduct';
+import { SeeProduct } from '../';
 
 function Hero() {
   return (

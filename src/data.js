@@ -1,4 +1,5 @@
 import { nanoid } from 'nanoid';
+import { EarphonesCat, HeadphonesCat, SpeakersCat } from './assets';
 
 export const pages = [
   {
@@ -16,6 +17,24 @@ export const pages = [
   {
     id: nanoid(),
     page: 'earphones',
+  },
+];
+
+export const categories = [
+  {
+    id: nanoid(),
+    name: 'headphones',
+    img: HeadphonesCat,
+  },
+  {
+    id: nanoid(),
+    name: 'speakers',
+    img: SpeakersCat,
+  },
+  {
+    id: nanoid(),
+    name: 'earphones',
+    img: EarphonesCat,
   },
 ];
 
