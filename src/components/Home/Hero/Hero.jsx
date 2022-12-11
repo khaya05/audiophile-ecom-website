@@ -1,5 +1,9 @@
 import styled from 'styled-components';
-import { HeroBgImg } from '../../../assets';
+import {
+  HeroDesktopBgImg,
+  HeroMobileBgImg,
+  HeroTabBgImg,
+} from '../../../assets';
 import { SeeProduct } from '../../';
 
 function Hero() {
@@ -23,13 +27,18 @@ function Hero() {
 }
 
 const Wrapper = styled.header`
-  padding: 102px 24px 112px;
-
+  background-image: url(${HeroMobileBgImg});
+  background-size: 100%;
+  background-position: 0 -6rem;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 1;
+  
   h1 {
     margin-top: 1rem;
     margin-bottom: 24px;
   }
-
+  
   .info {
     display: flex;
     justify-content: space-between;
@@ -40,7 +49,22 @@ const Wrapper = styled.header`
   .container {
     max-width: 328px;
     margin-inline: auto;
-    background-image: url(${HeroBgImg}) no-repeat;
+    height: 100%;
+    /* border: 1px solid white; */
+    padding: 102px 24px 112px;
+  }
+
+  .container::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+    opacity: 0.5;
+    z-index: -1;
   }
 
   p {
@@ -51,15 +75,32 @@ const Wrapper = styled.header`
   }
 
   @media (min-width: 48em) {
+    background-image: url(${HeroTabBgImg});
+    background-size: cover;
+    background-position: 0 -10rem;
+    height: 639px;
+
     .container {
       max-width: 379px;
     }
   }
 
   @media (min-width: 90em) {
+    padding-inline: 0;
+    background-image: none;
+    height: 632px;
+    
     .container {
-      display: flex;
-      /* max-width: 1110px; */
+      background-image: url(${HeroDesktopBgImg});
+      margin-inline: 0;
+      max-width: 1110px;
+      margin-inline: auto;
+      background-position: -7rem -9rem;
+    }
+
+    .info {
+      align-items: start;
+      max-width: 375px;
     }
 
     h1,

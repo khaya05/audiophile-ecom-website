@@ -18,10 +18,8 @@ function Category({ img, name }) {
 const Container = styled.div`
   background-color: var(--light-gray);
   position: relative;
-  /* margin-block: 5rem; */
   height: 165px;
-  width: 87.2%;
-  margin-inline: auto;
+  width: 100%;
   border-radius: 8px;
   text-align: center;
   padding-top:88px;

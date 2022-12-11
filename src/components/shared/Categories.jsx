@@ -18,22 +18,19 @@ const Container = styled.div`
   justify-content: space-between;
   flex-direction: column;
   gap: 68px;
-  margin-top: 92px;
-  margin-bottom: 120px;
+  margin: 92px auto 120px ;
+  width: 87.2%;
 
   @media (min-width: 48em) {
     flex-direction: row;
     gap: 10px;
-    max-width: 689px;
-    margin-inline: auto;
-    margin-block: 96px;
+    margin: 96px auto;
   }
 
   @media (min-width: 90em) {
     gap: 30px;
     max-width: 1110px;
-    margin-top: 120px;
-    margin-bottom: 168px;
+    margin:120px  auto 168px;
   }
 `;
 

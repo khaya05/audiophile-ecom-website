@@ -71,6 +71,7 @@ svg {
   --very-light-gray: hsla(0, 0%, 98%, 1);
   --01-white: hsla(0, 0%, 100%, 0.1);
   --dark: hsla(0, 0%, 6%, 1);
+  --dark-hover: hsla(0, 0%, 30%, 1);
 }
 
 * {
@@ -165,8 +166,6 @@ article p {
     line-height: 44px;
     letter-spacing: 1.42857px;
   }
-
-
 }
 
 nav,

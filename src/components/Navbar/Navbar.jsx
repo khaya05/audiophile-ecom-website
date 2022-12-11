@@ -57,7 +57,6 @@ const Nav = styled.nav`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* height: 25px; */
   }
 
   .container {
@@ -65,7 +64,6 @@ const Nav = styled.nav`
     width: 100%;
     padding: 32px 24px;
     border-bottom: 1px solid var(--01-white);
-    /* border: 1px solid yellow; */
   }
 
   .nav-left {
@@ -86,7 +84,6 @@ const Nav = styled.nav`
 
   div[role='button']:hover {
     cursor: pointer;
-    /* color: var(--main-orange); */
   }
 
   @media (min-width: 48em) {
@@ -108,6 +105,7 @@ const Nav = styled.nav`
     .nav-left {
       width: 128px;
     }
+
     .menu-btn-container {
       display: none;
     }
@@ -122,20 +120,17 @@ const Nav = styled.nav`
     ul {
       display: flex;
       gap: 34px;
-    }
-
-    li {
-      list-style: none;
-    }
-
-    a {
-      text-decoration: none;
-      text-transform: uppercase;
-      color: white;
-      font-weight: 700;
-      font-size: 13px;
-      line-height: 25px;
-      border: 1px solid white;
+      li {
+        list-style: none;
+        a {
+          text-decoration: none;
+          text-transform: uppercase;
+          color: white;
+          font-weight: 700;
+          font-size: 13px;
+          line-height: 25px;
+        }
+      }
     }
 
     a:hover {

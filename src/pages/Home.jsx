@@ -1,12 +1,13 @@
-import { Categories, Hero } from '../components'
+import { Categories, FeaturedProducts, Hero } from '../components';
 
 function Home() {
   return (
     <>
       <Hero />
       <Categories />
+      <FeaturedProducts />
     </>
-  )
+  );
 }
 
-export default Home
+export default Home;
