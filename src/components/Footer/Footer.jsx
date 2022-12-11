@@ -41,15 +41,21 @@ function Footer() {
 
         <ul className="socials">
           <li>
-            <Facebook />
+            <a href="#">
+              <Facebook />
+            </a>
           </li>
 
           <li>
-            <Twitter />
+            <a href="#">
+              <Twitter />
+            </a>
           </li>
 
           <li>
-            <Instagram />
+            <a href="#">
+              <Instagram />
+            </a>
           </li>
         </ul>
       </div>
@@ -61,7 +67,6 @@ const Container = styled.footer`
   padding-bottom: 32px;
   .container {
     margin-inline: 24px;
-    /* border: 1px solid white; */
   }
 
   .bar {
@@ -90,10 +95,11 @@ const Container = styled.footer`
 
   .nav-links {
     margin-block: 48px;
-  }
+    gap: 1rem;
 
-  .nav-links :not(:last-child) {
-    margin-bottom: 1rem;
+    li a:hover {
+      color: var(--orange-main-hover);
+    }
   }
 
   .socials {
@@ -101,6 +107,12 @@ const Container = styled.footer`
     flex-direction: row;
     justify-content: center;
     margin: 48px 0 38px;
+
+    li {
+      a:hover path {
+        fill: var(--orange-main);
+      }
+    }
   }
 
   li {
@@ -126,8 +138,85 @@ const Container = styled.footer`
     margin-inline: auto;
   }
 
-  .active-link{
-    color: var(--orange-main)
+  .active-link {
+    color: var(--orange-main);
+  }
+
+  @media (min-width: 48em) {
+    padding-bottom: 48px;
+    .container {
+      margin-inline: 39px;
+      position: relative;
+      /* border: 1px solid red; */
+    }
+
+
+    img {
+      margin: 56px 0 0;
+    }
+
+    p {
+      text-align: start;
+    }
+
+    .nav-links {
+      flex-direction: row;
+      justify-content: start;
+      margin-block: 2rem;
+      gap: 2rem;
+    }
+
+    .bar {
+      margin-inline: 0;
+    }
+
+    .socials {
+      position: absolute;
+      bottom: -2.2rem;
+      right: 2px;
+    }
+
+    .copyright {
+      margin-top: 80px;
+    }
+  }
+
+  @media (min-width: 90em) {
+
+    .container{
+      max-width: 1110px;
+      margin-inline: auto;
+    }
+    .logo-nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 71px 0 36px;
+    }
+
+    .nav-links {
+      margin: 0;
+    }
+
+    img {
+      margin: 0;
+    }
+
+    p {
+      max-width: 540px;
+    }
+
+    .about{
+      height: 100px;
+    }
+
+    .copyright {
+      margin-top: 56px;
+    }
+
+    .socials{
+      bottom: 3rem;
+    }
   }
 `;
 export default Footer;
