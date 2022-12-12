@@ -6,4 +6,6 @@ export { default as SeeProduct } from './UI/SeeProduct';
 export { default as ShopBtn } from './UI/ShopBtn';
 export { default as Category } from './shared/Category';
 export { default as Categories } from './shared/Categories';
-export {default as FeaturedProducts} from './Home/FeaturedProducts/FeaturedProducts'
+export { default as FeaturedProducts } from './Home/FeaturedProducts/FeaturedProducts'
+export { default as CategoriesPage } from './shared/CategoriesPage'
+export {default as ProductCard} from './shared/ProductCard'

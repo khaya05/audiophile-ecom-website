@@ -4,7 +4,7 @@ import './SeeProduct.scss';
 function SeeProduct(props) {
   return (
     <Link
-      to={'/'}
+      to={`/product/${props.id}`}
       className={`see-product-btn ${
         props.class === 'orange' ? 'orange-btn' : 'dark-btn'
       }`}

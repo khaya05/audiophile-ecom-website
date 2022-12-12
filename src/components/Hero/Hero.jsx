@@ -1,8 +1,12 @@
 import styled from 'styled-components';
 import { HeroBgImg } from '../../assets';
 import { SeeProduct } from '../';
+// import { data } from '../../data';
 
 function Hero() {
+  // const product = data.find((item) => item.slug === 'xx99-mark-two-headphones');
+
+  // console.log(product);
   return (
     <Wrapper>
       <div className="container">
@@ -14,7 +18,7 @@ function Hero() {
             made for the passionate music enthusiast.
           </p>
           <div className="btn-container">
-            <SeeProduct class="orange" path="/products/product/123" />
+            <SeeProduct class="orange" id={4} />
           </div>
         </div>
       </div>

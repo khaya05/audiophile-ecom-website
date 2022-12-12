@@ -1,9 +1,13 @@
-import React from 'react'
+import styled from 'styled-components';
+import { CategoriesPage } from '../components';
+import { data } from '../data';
 
 function Speakers() {
-  return (
-    <div>Speakers</div>
-  )
+  const speakers = data.filter(({ category }) => category === 'speakers');
+
+  return <CategoriesPage heading={'speakers'} products={speakers} />;
 }
 
-export default Speakers
+const Container = styled.article``;
+
+export default Speakers;
