@@ -5,7 +5,7 @@ function SeeProduct(props) {
   return (
     <Link
       to={`/product/${props.id}`}
-      className={`see-product-btn ${
+      className={`main-btn ${
         props.class === 'orange' ? 'orange-btn' : 'dark-btn'
       }`}
     >

@@ -6,6 +6,9 @@ export { default as SeeProduct } from './UI/SeeProduct';
 export { default as ShopBtn } from './UI/ShopBtn';
 export { default as Category } from './shared/Category';
 export { default as Categories } from './shared/Categories';
-export { default as FeaturedProducts } from './Home/FeaturedProducts/FeaturedProducts'
-export { default as CategoriesPage } from './shared/CategoriesPage'
-export {default as ProductCard} from './shared/ProductCard'
+export { default as FeaturedProducts } from './Home/FeaturedProducts/FeaturedProducts';
+export { default as CategoriesPage } from './shared/CategoriesPage';
+export { default as ProductCard } from './shared/ProductCard';
+export { default as SingleProductPage } from './SingleProductPage/SingleProductPage';
+export { default as IncrementBtn } from './UI/IncrementBtn';
+export { default as OrangeBtn } from './UI/OrangeBtn';
