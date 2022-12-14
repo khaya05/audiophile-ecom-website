@@ -26,6 +26,7 @@ const Button = styled.button`
   letter-spacing: 1px;
 
   :hover {
+    cursor: pointer;
     background: var(--orange-main-hover);
   }
 `;

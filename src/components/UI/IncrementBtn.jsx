@@ -24,13 +24,15 @@ const Div = styled.div`
     border: none;
     color: black;
     opacity: 0.4;
-    width: 1rem;
-    height: 18px;
-    font-size: 2rem;
-    border: 1px solid red;
+    width: 100%;
+    font-size: 1.5rem;
+    display: grid;
+    place-items: center;
+
   }
 
   button:hover {
+    cursor: pointer;
     color: var(--orange-main);
   }
 
@@ -38,7 +40,7 @@ const Div = styled.div`
   button {
     font-weight: 700;
   }
-  
+
   div {
     font-size: 13px;
     text-align: center;

@@ -23,7 +23,7 @@ function ProductInfo({
         <p>{description}</p>
         <p className="price">
           ${'  '}
-          {price}
+          {price.toLocaleString()}
         </p>
         <div className="btn-container">
           <IncrementBtn />

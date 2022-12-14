@@ -1,6 +1,14 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Audiophile, Footer, Navbar, ScrollToTop } from './components';
-import { Earphones, Error, Headphones, Home, Product, Speakers } from './pages';
+import {
+  Checkout,
+  Earphones,
+  Error,
+  Headphones,
+  Home,
+  Product,
+  Speakers,
+} from './pages';
 
 function App() {
   return (
@@ -13,7 +21,8 @@ function App() {
         <Route path="speakers" element={<Speakers />} />
         <Route path="earphones" element={<Earphones />} />
         <Route path="product/:id" element={<Product />} />
-        <Route path='*' element = {<Error />} />
+        <Route path="checkout" element={<Checkout />} />
+        <Route path="*" element={<Error />} />
       </Routes>
       <Audiophile />
       <Footer />
