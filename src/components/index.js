@@ -12,3 +12,4 @@ export { default as ProductCard } from './shared/ProductCard';
 export { default as SingleProductPage } from './SingleProductPage/SingleProductPage';
 export { default as IncrementBtn } from './UI/IncrementBtn';
 export { default as OrangeBtn } from './UI/OrangeBtn';
+export { default as ScrollToTop } from './shared/ScrollToTop';

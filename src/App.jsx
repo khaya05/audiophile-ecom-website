@@ -1,10 +1,11 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Audiophile, Footer, Navbar } from './components';
+import { Audiophile, Footer, Navbar, ScrollToTop } from './components';
 import { Earphones, Error, Headphones, Home, Product, Speakers } from './pages';
 
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Navbar />
       <Routes>
         <Route path="/" exact element={<Home />} />
