@@ -9,7 +9,6 @@ function SingleProductPage(props) {
   const {
     name,
     image,
-    categoryImage,
     price,
     description,
     features,

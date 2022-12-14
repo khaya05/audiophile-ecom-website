@@ -26,6 +26,8 @@ const Div = styled.div`
     opacity: 0.4;
     width: 1rem;
     height: 18px;
+    font-size: 2rem;
+    border: 1px solid red;
   }
 
   button:hover {
@@ -35,10 +37,10 @@ const Div = styled.div`
   div,
   button {
     font-weight: 700;
-    font-size: 13px;
   }
-
+  
   div {
+    font-size: 13px;
     text-align: center;
     color: black;
     opacity: 1;

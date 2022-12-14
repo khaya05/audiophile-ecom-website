@@ -5,17 +5,19 @@ function Gallery({ gallery }) {
   return (
     <Div>
       <div className="container" aria-label="more images">
-        <picture>
-          <source media="(min-width:90em)" srcSet={first.desktop} />
-          <source media="(min-width:48em)" srcSet={first.tablet} />
-          <img src={first.mobile} alt="image one" />
-        </picture>
+        <div>
+          <picture>
+            <source media="(min-width:90em)" srcSet={first.desktop} />
+            <source media="(min-width:48em)" srcSet={first.tablet} />
+            <img src={first.mobile} alt="image one" />
+          </picture>
 
-        <picture>
-          <source media="(min-width:90em)" srcSet={second.desktop} />
-          <source media="(min-width:48em)" srcSet={second.tablet} />
-          <img src={second.mobile} alt="image two" />
-        </picture>
+          <picture>
+            <source media="(min-width:90em)" srcSet={second.desktop} />
+            <source media="(min-width:48em)" srcSet={second.tablet} />
+            <img src={second.mobile} alt="image two" />
+          </picture>
+        </div>
 
         <picture>
           <source media="(min-width:90em)" srcSet={third.desktop} />
@@ -37,33 +39,62 @@ const Div = styled.div`
     object-fit: cover;
   }
 
-  .container {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 174px 174px 368px;
+  .container,
+  .container > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
     gap: 20px;
   }
 
-  @media (min-width: 48em) {
-    .container {
-      border: 1px solid red;
-      width: 690;
-      gap: 18px;
-      /* height: 368px; */
-      grid-template-columns: 277px 395px;
-      grid-template-rows: 277px 277px;
+  .container {
+    div {
+      picture {
+        height: 174px;
+      }
     }
 
-    .container:nth-child(3) {
-      grid-column-start: 2;
-      /* margin-right: 1rem; */
-      /* width: 50%; */
-      visibility: hidden;
+    picture {
+      height: 368px;
+    }
+  }
+
+  @media (min-width: 48em) {
+    max-width: 689px;
+    margin-inline: auto;
+    .container {
+      flex-direction: row;
     }
   }
 
   @media (min-width: 90em) {
+    max-width: 1110px;
     margin-bottom: 160px;
+
+    .container {
+      height: 592px;
+      width: 100%;
+    }
+
+    .container,
+    .container > div {
+      gap: 18px;
+    }
+
+    .container {
+      div {
+        height: 100%;
+
+        picture {
+          height: 280px;
+        }
+      }
+
+      picture {
+        height: 100%;
+      }
+    }
   }
 `;
 

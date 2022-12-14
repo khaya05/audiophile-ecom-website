@@ -3,8 +3,6 @@ import { data } from '../../data';
 import SeeProduct from '../UI/SeeProduct';
 
 function Others({ others }) {
-  // console.log(others);
-
   return (
     <Div>
       <h2>You may also like</h2>
@@ -12,7 +10,7 @@ function Others({ others }) {
       <ul className="container" aria-label="you may also like">
         {others.map(({ image, name, slug }, index) => {
           const currentItem = data.find((item) => item.slug === slug);
-          // console.log(currentItem);
+
           return (
             <li key={index}>
               <picture>
@@ -32,7 +30,7 @@ function Others({ others }) {
 }
 const Div = styled.div`
   margin: 0 auto;
-  
+
   ul,
   li {
     display: flex;
