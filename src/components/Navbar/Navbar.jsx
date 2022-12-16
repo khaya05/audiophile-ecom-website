@@ -32,7 +32,9 @@ function Navbar() {
         </ul>
 
         <div className="cart-container" role="button">
+          <Link to={'checkout'}>
           <AiOutlineShoppingCart />
+          </Link>
         </div>
       </div>
     </Nav>

@@ -13,4 +13,7 @@ export { default as SingleProductPage } from './SingleProductPage/SingleProductP
 export { default as IncrementBtn } from './UI/IncrementBtn';
 export { default as OrangeBtn } from './UI/OrangeBtn';
 export { default as ScrollToTop } from './shared/ScrollToTop';
-export {default as GoBack} from './shared/GoBack'
+export { default as GoBack } from './shared/GoBack';
+export { default as CheckoutForm } from './checkout/CheckoutForm';
+export { default as Cart } from './Cart/Cart';
+// export {default }

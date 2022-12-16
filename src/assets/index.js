@@ -133,3 +133,12 @@ export { default as zx7GalleryThirdDesktop } from './product-zx7-speaker/desktop
 export { default as zx7CategoryImgMobile } from './product-zx7-speaker/mobile/image-category-page-preview.jpg';
 export { default as zx7CategoryImgTab } from './product-zx7-speaker/tablet/image-category-page-preview.jpg';
 export { default as zx7CategoryImgDesktop } from './product-zx7-speaker/desktop/image-category-page-preview.jpg';
+
+///////////////////////////////////////////////////////////////////////////////
+
+export { default as xx59CartImage } from './cart/image-xx59-headphones.jpg';
+export { default as xx99Mk1CartImage } from './cart/image-xx99-mark-one-headphones.jpg';
+export { default as xx99Mk2CartImage } from './cart/image-xx99-mark-two-headphones.jpg';
+export { default as yx1CartImage } from './cart/image-yx1-earphones.jpg';
+export { default as zx7CartImage } from './cart/image-zx7-speaker.jpg';
+export { default as zx9CartImage } from './cart/image-zx9-speaker.jpg';

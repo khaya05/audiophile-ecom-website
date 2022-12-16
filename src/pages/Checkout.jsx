@@ -1,9 +1,36 @@
-
+import styled from 'styled-components';
+import { Cart, CheckoutForm, GoBack } from '../components';
 
 function Checkout() {
   return (
-    <div>Checkout</div>
-  )
+    <Main>
+      <div className="page-container">
+        <GoBack />
+        <div className="container">
+          <CheckoutForm />
+          <Cart />
+        </div>
+      </div>
+    </Main>
+  );
 }
 
-export default Checkout
+const Main = styled.main`
+  background-color: var(--light-gray);
+
+  .page-container {
+    max-width: 1110px;
+    margin-inline: auto;
+  }
+  h2 {
+    text-align: start;
+  }
+
+  .container{
+    width: 100%;
+    display: flex;
+    gap: 30px;
+  }
+`;
+
+export default Checkout;

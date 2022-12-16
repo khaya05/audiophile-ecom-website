@@ -9,6 +9,7 @@ import {
   x99Mk2CategoryImgDesktop,
   x99Mk2CategoryImgMobile,
   x99Mk2CategoryImgTab,
+  xx59CartImage,
   xx59CategoryImgDesktop,
   xx59CategoryImgMobile,
   xx59CategoryImgTab,
@@ -24,6 +25,7 @@ import {
   xx59ProductDesktop,
   xx59ProductMobile,
   xx59ProductTab,
+  xx99Mk1CartImage,
   xx99Mk1GalleryFirstDesktop,
   xx99Mk1GalleryFirstMobile,
   xx99Mk1GalleryFirstTab,
@@ -36,6 +38,7 @@ import {
   xx99Mk1ProductDesktop,
   xx99Mk1ProductMobile,
   xx99Mk1ProductTab,
+  xx99Mk2CartImage,
   xx99Mk2GalleryFirstDesktop,
   xx99Mk2GalleryFirstMobile,
   xx99Mk2GalleryFirstTab,
@@ -48,6 +51,7 @@ import {
   xx99Mk2ProductDesktop,
   xx99Mk2ProductMobile,
   xx99Mk2ProductTab,
+  yx1CartImage,
   yx1CategoryImgDesktop,
   yx1CategoryImgMobile,
   yx1CategoryImgTab,
@@ -63,6 +67,7 @@ import {
   yx1ProductDesktop,
   yx1ProductMobile,
   yx1ProductTab,
+  zx7CartImage,
   zx7CategoryImgDesktop,
   zx7CategoryImgMobile,
   zx7CategoryImgTab,
@@ -78,6 +83,7 @@ import {
   zx7ProductDesktop,
   zx7ProductMobile,
   zx7ProductTab,
+  zx9CartImage,
   zx9CategoryImgDesktop,
   zx9CategoryImgMobile,
   zx9CategoryImgTab,
@@ -142,6 +148,7 @@ export const data = [
       tablet: yx1ProductTab,
       desktop: yx1ProductDesktop,
     },
+    cartImage: yx1CartImage,
     category: 'earphones',
     categoryImage: {
       mobile: yx1CategoryImgMobile,
@@ -232,6 +239,7 @@ export const data = [
       tablet: xx59ProductTab,
       desktop: xx59ProductDesktop,
     },
+    cartImage: xx59CartImage,
     category: 'headphones',
     categoryImage: {
       mobile: xx59CategoryImgMobile,
@@ -318,6 +326,7 @@ export const data = [
       tablet: xx99Mk1ProductTab,
       desktop: xx99Mk1ProductDesktop,
     },
+    cartImage: xx99Mk1CartImage,
     category: 'headphones',
     categoryImage: {
       mobile: x99Mk1CategoryImgMobile,
@@ -405,6 +414,7 @@ export const data = [
       desktop: xx99Mk2ProductDesktop,
     },
     category: 'headphones',
+    cartImage: xx99Mk2CartImage,
     categoryImage: {
       mobile: x99Mk2CategoryImgMobile,
       tablet: x99Mk2CategoryImgTab,
@@ -495,6 +505,7 @@ export const data = [
       desktop: zx7ProductDesktop,
     },
     category: 'speakers',
+    cartImage: zx7CartImage,
     categoryImage: {
       mobile: zx7CategoryImgMobile,
       tablet: zx7CategoryImgTab,
@@ -585,6 +596,7 @@ export const data = [
       desktop: zx9ProductDesktop,
     },
     category: 'speakers',
+    cartImage: zx9CartImage,
     categoryImage: {
       mobile: zx9CategoryImgMobile,
       tablet: zx9CategoryImgTab,
@@ -662,7 +674,7 @@ export const data = [
           tablet: xx59ProductTab,
           desktop: xx59ProductDesktop,
         },
-      }
+      },
     ],
   },
 ];

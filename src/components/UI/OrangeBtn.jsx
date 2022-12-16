@@ -1,9 +1,13 @@
 import styled from 'styled-components';
+import {useDispatch} from 'react-redux'
+import { cartActions } from '../../store/cartSlice';
 
 function OrangeBtn({ text, action }) {
+  const dispatch = useDispatch()
   const handleClick = () => {
+    
     if (action === 'add to cart') {
-      console.log('added to cart');
+      dispatch(cartActions.addItemToCart());
     }
   };
   return (
