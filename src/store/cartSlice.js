@@ -3,22 +3,39 @@ import { createSlice } from '@reduxjs/toolkit';
 const cartSlice = createSlice({
   name: 'cartSlice',
   initialState: {
+    count: 1,
     cartItems: [],
   },
 
   reducers: {
     addItemToCart(state, action) {
-      // if (!state.cartItems.includes(item)) {
-      //   state.cartItems.push(item);
-      // } else {
-      //   // state.cartItems.map(item => )
-      // }
+      const item = action.payload;
 
-      console.log('added to cart');
+      if (!state.cartItems.includes(item)) {
+        state.cartItems.push(item);
+      } else {
+        state.cartItems.map((currentItem) => {
+          if (currentItem === item) {
+            currentItem.quantity = item.quantity;
+          }
+        });
+      }
+      state.count = 1;
+
+      console.log('added to cart', item);
     },
 
-    increaseQuantity() {},
-    decreaseQuantity() {},
+    increaseQuantity(state) {
+      console.log('click');
+      state.count++;
+    },
+    decreaseQuantity(state) {
+      if (state.count === 1) {
+        state.count = 1;
+      } else {
+        state.count--;
+      }
+    },
   },
 });
 

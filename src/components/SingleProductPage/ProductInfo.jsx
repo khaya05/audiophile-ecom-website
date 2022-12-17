@@ -1,14 +1,26 @@
+import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 import IncrementBtn from '../UI/IncrementBtn';
 import OrangeBtn from '../UI/OrangeBtn';
 
 function ProductInfo({
+  id,
   price,
   description,
   name,
   image: { mobile, tablet, desktop },
   isNew,
+  cartImage,
+  slug,
 }) {
+  const count = useSelector((state) => state.cart.count);
+
+  const cartInfo = {
+    id,
+    slug,
+    price,
+    quantity:count
+  };
   return (
     <Container>
       <picture>
@@ -27,7 +39,7 @@ function ProductInfo({
         </p>
         <div className="btn-container">
           <IncrementBtn />
-          <OrangeBtn text={'add to cart'} action={'add to cart'} />
+          <OrangeBtn text={'add to cart'} action={'add to cart'} cartInfo={cartInfo } />
         </div>
       </div>
     </Container>

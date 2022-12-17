@@ -1,11 +1,24 @@
+import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
+import { cartActions } from '../../store/cartSlice';
 
 function IncrementBtn() {
+  const dispatch = useDispatch();
+  const count = useSelector((state) => state.cart.count);
+
+  const increaseCount = () => {
+    dispatch(cartActions.increaseQuantity());
+  };
+
+  const decreaseCount = () => {
+    dispatch(cartActions.decreaseQuantity())
+  }
+
   return (
     <Div className="btn-container">
-      <button>-</button>
-      <div>1</div>
-      <button>+</button>
+      <button onClick={decreaseCount}>-</button>
+      <div>{count}</div>
+      <button onClick={increaseCount }>+</button>
     </Div>
   );
 }
@@ -28,7 +41,6 @@ const Div = styled.div`
     font-size: 1.5rem;
     display: grid;
     place-items: center;
-
   }
 
   button:hover {

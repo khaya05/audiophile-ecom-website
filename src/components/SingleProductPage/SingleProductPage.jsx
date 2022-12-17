@@ -10,6 +10,7 @@ function SingleProductPage(props) {
   const navigate = useNavigate();
 
   const {
+    id,
     name,
     image,
     price,
@@ -19,6 +20,8 @@ function SingleProductPage(props) {
     others,
     gallery,
     new: isNew,
+    cartImage,
+    slug,
   } = props.product[0];
 
   return (
@@ -27,11 +30,14 @@ function SingleProductPage(props) {
         <GoBack />
 
         <ProductInfo
+          id={id}
           price={price}
           description={description}
           name={name}
           image={image}
           isNew={isNew}
+          cartImage={cartImage}
+          slug={slug}
         />
         <Features features={features} includes={includes} />
         <Gallery gallery={gallery} />

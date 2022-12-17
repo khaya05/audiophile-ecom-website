@@ -1,15 +1,18 @@
 import styled from 'styled-components';
-import {useDispatch} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
 import { cartActions } from '../../store/cartSlice';
 
-function OrangeBtn({ text, action }) {
+function OrangeBtn({ text, action,cartInfo }) {
   const dispatch = useDispatch()
+  const cartItems = useSelector(state=>state.cart.cartItems)
   const handleClick = () => {
     
     if (action === 'add to cart') {
-      dispatch(cartActions.addItemToCart());
+      dispatch(cartActions.addItemToCart(cartInfo));
     }
   };
+
+console.log(cartItems);
   return (
     <Button onClick={handleClick} className="main-btn">
       {text}
