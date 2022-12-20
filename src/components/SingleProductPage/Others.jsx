@@ -3,6 +3,7 @@ import { data } from '../../data';
 import SeeProduct from '../UI/SeeProduct';
 
 function Others({ others }) {
+
   return (
     <Div>
       <h2>You may also like</h2>

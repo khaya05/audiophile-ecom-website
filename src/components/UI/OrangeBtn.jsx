@@ -1,18 +1,24 @@
 import styled from 'styled-components';
-import {useDispatch, useSelector} from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux';
 import { cartActions } from '../../store/cartSlice';
+import { useNavigate } from 'react-router-dom';
 
-function OrangeBtn({ text, action,cartInfo }) {
-  const dispatch = useDispatch()
-  const cartItems = useSelector(state=>state.cart.cartItems)
+function OrangeBtn({ text, action, cartInfo }) {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const cartItems = useSelector((state) => state.cart.cartItems);
+
   const handleClick = () => {
-    
     if (action === 'add to cart') {
       dispatch(cartActions.addItemToCart(cartInfo));
     }
+
+    if (action === 'checkout') {
+      navigate('/checkout');
+    }
   };
 
-console.log(cartItems);
   return (
     <Button onClick={handleClick} className="main-btn">
       {text}

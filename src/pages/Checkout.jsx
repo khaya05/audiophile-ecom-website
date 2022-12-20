@@ -8,7 +8,9 @@ function Checkout() {
         <GoBack />
         <div className="container">
           <CheckoutForm />
-          <Cart />
+          <div className="cart-container">
+            <Cart />
+          </div>
         </div>
       </div>
     </Main>
@@ -26,10 +28,14 @@ const Main = styled.main`
     text-align: start;
   }
 
-  .container{
+  .container {
     width: 100%;
     display: flex;
     gap: 30px;
+  }
+
+  .cart-container {
+    width: 350px;
   }
 `;
 

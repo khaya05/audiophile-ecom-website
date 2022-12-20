@@ -141,7 +141,7 @@ export const categories = [
 export const data = [
   {
     id: 1,
-    slug: 'yx1-earphones',
+    slug: 'yx1',
     name: 'YX1 Wireless Earphones',
     image: {
       mobile: yx1ProductMobile,
@@ -202,7 +202,7 @@ export const data = [
     },
     others: [
       {
-        slug: 'xx99-mark-one-headphones',
+        slug: 'xx99 mark i',
         name: 'XX99 Mark I',
         image: {
           mobile: xx99Mk1ProductMobile,
@@ -211,7 +211,7 @@ export const data = [
         },
       },
       {
-        slug: 'xx59-headphones',
+        slug: 'xx59',
         name: 'XX59',
         image: {
           mobile: xx59ProductMobile,
@@ -220,7 +220,7 @@ export const data = [
         },
       },
       {
-        slug: 'zx9-speaker',
+        slug: 'zx9',
         name: 'ZX9 Speaker',
         image: {
           mobile: zx9ProductMobile,
@@ -232,7 +232,7 @@ export const data = [
   },
   {
     id: 2,
-    slug: 'xx59-headphones',
+    slug: 'xx59',
     name: 'XX59 Headphones',
     image: {
       mobile: xx59ProductMobile,
@@ -289,7 +289,7 @@ export const data = [
     },
     others: [
       {
-        slug: 'xx99-mark-two-headphones',
+        slug: 'xx99 mark ii',
         name: 'XX99 Mark II',
         image: {
           mobile: xx99Mk2ProductMobile,
@@ -298,7 +298,7 @@ export const data = [
         },
       },
       {
-        slug: 'xx99-mark-one-headphones',
+        slug: 'xx99 mark i',
         name: 'XX99 Mark I',
         image: {
           mobile: xx99Mk1ProductMobile,
@@ -307,7 +307,7 @@ export const data = [
         },
       },
       {
-        slug: 'zx9-speaker',
+        slug: 'zx9',
         name: 'ZX9 Speaker',
         image: {
           mobile: zx9ProductMobile,
@@ -319,7 +319,7 @@ export const data = [
   },
   {
     id: 3,
-    slug: 'xx99-mark-one-headphones',
+    slug: 'xx99 mark i',
     name: 'XX99 Mark I Headphones',
     image: {
       mobile: xx99Mk1ProductMobile,
@@ -376,7 +376,7 @@ export const data = [
     },
     others: [
       {
-        slug: 'xx99-mark-two-headphones',
+        slug: 'xx99 mark ii',
         name: 'XX99 Mark II',
         image: {
           mobile: xx99Mk2ProductMobile,
@@ -385,7 +385,7 @@ export const data = [
         },
       },
       {
-        slug: 'xx59-headphones',
+        slug: 'xx59',
         name: 'XX59',
         image: {
           mobile: xx59ProductMobile,
@@ -394,7 +394,7 @@ export const data = [
         },
       },
       {
-        slug: 'zx9-speaker',
+        slug: 'zx9',
         name: 'ZX9 Speaker',
         image: {
           mobile: zx9ProductMobile,
@@ -406,7 +406,7 @@ export const data = [
   },
   {
     id: 4,
-    slug: 'xx99-mark-two-headphones',
+    slug: 'xx99 mark ii',
     name: 'XX99 Mark II Headphones',
     image: {
       mobile: xx99Mk2ProductMobile,
@@ -467,7 +467,7 @@ export const data = [
     },
     others: [
       {
-        slug: 'xx99-mark-one-headphones',
+        slug: 'xx99 mark i',
         name: 'XX99 Mark I',
         image: {
           mobile: xx99Mk1ProductMobile,
@@ -476,7 +476,7 @@ export const data = [
         },
       },
       {
-        slug: 'xx59-headphones',
+        slug: 'xx59',
         name: 'XX59',
         image: {
           mobile: xx59ProductMobile,
@@ -485,7 +485,7 @@ export const data = [
         },
       },
       {
-        slug: 'zx9-speaker',
+        slug: 'zx9',
         name: 'ZX9 Speaker',
         image: {
           mobile: zx9ProductMobile,
@@ -497,7 +497,7 @@ export const data = [
   },
   {
     id: 5,
-    slug: 'zx7-speaker',
+    slug: 'zx7',
     name: 'ZX7 Speaker',
     image: {
       mobile: zx7ProductMobile,
@@ -558,7 +558,7 @@ export const data = [
     },
     others: [
       {
-        slug: 'xx99-mark-one-headphones',
+        slug: 'xx99 mark i',
         name: 'XX99 Mark I',
         image: {
           mobile: xx99Mk1ProductMobile,
@@ -567,7 +567,7 @@ export const data = [
         },
       },
       {
-        slug: 'xx59-headphones',
+        slug: 'xx59',
         name: 'XX59',
         image: {
           mobile: xx59ProductMobile,
@@ -576,7 +576,7 @@ export const data = [
         },
       },
       {
-        slug: 'zx9-speaker',
+        slug: 'zx9',
         name: 'ZX9 Speaker',
         image: {
           mobile: zx9ProductMobile,
@@ -588,7 +588,7 @@ export const data = [
   },
   {
     id: 6,
-    slug: 'zx9-speaker',
+    slug: 'zx9',
     name: 'ZX9 Speaker',
     image: {
       mobile: zx9ProductMobile,
@@ -649,7 +649,7 @@ export const data = [
     },
     others: [
       {
-        slug: 'zx7-speaker',
+        slug: 'zx7',
         name: 'ZX7 Speaker',
         image: {
           mobile: zx7ProductMobile,
@@ -658,7 +658,7 @@ export const data = [
         },
       },
       {
-        slug: 'xx99-mark-one-headphones',
+        slug: 'xx99 mark i',
         name: 'XX99 Mark I',
         image: {
           mobile: xx99Mk1ProductMobile,
@@ -667,7 +667,7 @@ export const data = [
         },
       },
       {
-        slug: 'xx59-headphones',
+        slug: 'xx59',
         name: 'XX59',
         image: {
           mobile: xx59ProductMobile,

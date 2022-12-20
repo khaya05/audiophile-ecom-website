@@ -19,8 +19,10 @@ function ProductInfo({
     id,
     slug,
     price,
+    cartImage,
     quantity:count
   };
+  
   return (
     <Container>
       <picture>

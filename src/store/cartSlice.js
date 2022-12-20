@@ -10,23 +10,22 @@ const cartSlice = createSlice({
   reducers: {
     addItemToCart(state, action) {
       const item = action.payload;
+      const some = state.cartItems.some((product) => product.id === item.id);
 
-      if (!state.cartItems.includes(item)) {
+      if (!some) {
         state.cartItems.push(item);
       } else {
+        console.log('second case');
         state.cartItems.map((currentItem) => {
-          if (currentItem === item) {
-            currentItem.quantity = item.quantity;
+          if (currentItem.id === item.id) {
+            currentItem.quantity = currentItem.quantity + item.quantity;
           }
         });
       }
       state.count = 1;
-
-      console.log('added to cart', item);
     },
 
     increaseQuantity(state) {
-      console.log('click');
       state.count++;
     },
     decreaseQuantity(state) {
