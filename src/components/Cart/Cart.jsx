@@ -27,13 +27,15 @@ function Cart() {
 
               <div className="price-container">
                 <h5>{slug}</h5>
-                <p>{price}</p>
+                <p>$ {price.toLocaleString()}</p>
               </div>
             </div>
 
-            {/* <IncrementBtn /> */}
+            <div className="btn-container">
+              <IncrementBtn />
+            </div>
 
-            <p className="quantity">x{quantity}</p>
+            {/* <p className="quantity">x{quantity}</p> */}
           </li>
         ))}
       </ul>
@@ -53,7 +55,7 @@ function Cart() {
         <div className="number">$ {vat}</div>
       </div>
 
-      <div className="tot-container">
+      <div className="tot-container grand-total">
         <p>grand total</p>
         <div className="number">$ {grandTotal}</div>
       </div>
@@ -93,22 +95,79 @@ const Div = styled.div`
     }
   }
 
+  .btn-container {
+    width: 96px;
+    height: 2rem;
+  }
+
   img {
     width: 64px;
     border-radius: 8px;
+  }
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 2rem;
   }
 
   li {
     height: 64px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+
+    h5,
+    p {
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    h5 {
+      text-transform: uppercase;
+    }
+
+    p {
+    }
   }
 
-  .div{
+  .div {
     display: flex;
     gap: 1rem;
     align-items: center;
     justify-content: center;
+  }
+
+  .tot-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+
+    p {
+      text-transform: uppercase;
+      font-size: 15px;
+    }
+
+    div {
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 25px;
+      text-align: right;
+      text-transform: uppercase;
+      color: #000000;
+    }
+  }
+
+  .grand-total {
+    margin-bottom: 0;
+    margin: 24px 0 2rem;
+
+    div {
+      color: var(--orange-main);
+    }
   }
 `;
 
