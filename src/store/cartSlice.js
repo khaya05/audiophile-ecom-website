@@ -28,12 +28,43 @@ const cartSlice = createSlice({
     increaseQuantity(state) {
       state.count++;
     },
+
     decreaseQuantity(state) {
       if (state.count === 1) {
         state.count = 1;
       } else {
         state.count--;
       }
+    },
+
+    increaseQuantityInCart(state, action) {
+      state.cartItems.map((item) => {
+        return item.id === action.payload
+          ? { ...item, quantity: item.quantity++ }
+          : item;
+      });
+    },
+
+    decreaseQuantityInCart(state, action) {
+      const currentItem = state.cartItems.find(
+        (item) => item.id === action.payload
+      );
+
+      if (currentItem.quantity === 1) {
+        state.cartItems = state.cartItems.filter(
+          (item) => item !== currentItem
+        );
+      } else {
+        state.cartItems.map((item) => {
+          return item.id === action.payload
+            ? { ...item, quantity: item.quantity-- }
+            : item;
+        });
+      }
+    },
+
+    removeAll(state) {
+      state.cartItems = [];
     },
   },
 });

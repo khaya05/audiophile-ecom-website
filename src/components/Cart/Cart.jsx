@@ -1,22 +1,49 @@
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 import styled from 'styled-components';
+import { cartActions } from '../../store/cartSlice';
 import IncrementBtn from '../UI/IncrementBtn';
 import OrangeBtn from '../UI/OrangeBtn';
 
 function Cart() {
   const cartItems = useSelector((state) => state.cart.cartItems);
-  const currentPath = window.location.href;
+  const dispatch = useDispatch();
+  const location = useLocation();
 
-  const total = 1;
-  const shipping = 1;
-  const vat = 1;
-  const grandTotal = 1;
+  const checkout = '/checkout';
+
+  const total = cartItems.reduce(
+    (acc, curr) => acc + curr.price * curr.quantity,
+    0
+  );
+
+  const shipping = 50;
+  const vat = parseFloat(total * 0.15).toFixed(2);
+  const grandTotal = total + shipping;
+
+  const decreaseQuantity = (id) => {
+    dispatch(cartActions.decreaseQuantityInCart(id));
+  };
+
+  const increaseQuantity = (id) => {
+    dispatch(cartActions.increaseQuantityInCart(id));
+  };
+
+  const clearCart = () => {
+    dispatch(cartActions.removeAll());
+  };
 
   return (
     <Div>
       <div className="header__container">
-        <h3>cart ({cartItems.length})</h3>
-        <button>remove all</button>
+        <h3>
+          {location.pathname === checkout
+            ? 'summary'
+            : `cart (${cartItems.length})`}
+        </h3>
+        {location.pathname !== checkout && (
+          <button onClick={clearCart}>remove all</button>
+        )}
       </div>
 
       <ul>
@@ -31,36 +58,59 @@ function Cart() {
               </div>
             </div>
 
-            <div className="btn-container">
-              <IncrementBtn />
-            </div>
+            {location.pathname !== checkout && (
+              <div className="btn-container">
+                <div
+                  className="toggle-quantity"
+                  onClick={() => decreaseQuantity(id)}
+                >
+                  -
+                </div>
+                <div className="quantity">{quantity}</div>
+                <div
+                  className="toggle-quantity"
+                  onClick={() => increaseQuantity(id)}
+                >
+                  +
+                </div>
+              </div>
+            )}
 
-            {/* <p className="quantity">x{quantity}</p> */}
+            {location.pathname === checkout && (
+              <p className="quantity">x{quantity}</p>
+            )}
           </li>
         ))}
       </ul>
 
       <div className="tot-container">
         <p>total</p>
-        <div className="number">$ {total}</div>
+        <div className="number">$ {total.toLocaleString()}</div>
       </div>
 
-      <div className="tot-container">
-        <p>shipping</p>
-        <div className="number">$ {shipping}</div>
-      </div>
+      {location.pathname === checkout && (
+        <>
+          <div className="tot-container">
+            <p>shipping</p>
+            <div className="number">$ {shipping}</div>
+          </div>
 
-      <div className="tot-container">
-        <p>vat (included)</p>
-        <div className="number">$ {vat}</div>
-      </div>
+          <div className="tot-container">
+            <p>vat (included)</p>
+            <div className="number">$ {vat.toLocaleString()}</div>
+          </div>
 
-      <div className="tot-container grand-total">
-        <p>grand total</p>
-        <div className="number">$ {grandTotal}</div>
-      </div>
+          <div className="tot-container grand-total">
+            <p>grand total</p>
+            <div className="number">$ {grandTotal.toLocaleString()}</div>
+          </div>
+        </>
+      )}
 
-      <OrangeBtn text={'checkout'} action={'checkout'} />
+      <OrangeBtn
+        text={location.pathname === checkout ? 'continue' : 'checkout'}
+        action={location.pathname === checkout ?'continue': 'checkout'}
+      />
     </Div>
   );
 }
@@ -138,6 +188,36 @@ const Div = styled.div`
     gap: 1rem;
     align-items: center;
     justify-content: center;
+  }
+
+  .btn-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: var(--light-gray);
+
+    div {
+      font-weight: 700;
+    }
+
+    .toggle-quantity {
+      color: hsla(0, 0%, 0%, 0.5);
+      font-size: 2rem;
+
+      :hover {
+        cursor: pointer;
+        color: var(--orange-main);
+      }
+    }
+
+    .quantity,
+    .toggle-quantity {
+      display: grid;
+      place-items: center;
+      width: 1rem;
+      height: 18px;
+      font-size: 13px;
+    }
   }
 
   .tot-container {
