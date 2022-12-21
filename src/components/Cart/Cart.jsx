@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import { cartActions } from '../../store/cartSlice';
+import { uiActions } from '../../store/uiSlice';
 import IncrementBtn from '../UI/IncrementBtn';
 import OrangeBtn from '../UI/OrangeBtn';
 
@@ -31,7 +32,21 @@ function Cart() {
 
   const clearCart = () => {
     dispatch(cartActions.removeAll());
+    dispatch(uiActions.toggleCart());
+    dispatch(uiActions.toggleModal());
   };
+
+  if (cartItems.length === 0) {
+    return (
+      <Div>
+        <h3>cart (0)</h3>
+        <br />
+        <hr />
+        <br />
+        <p className="empty-cart">your cart is currently empty</p>
+      </Div>
+    );
+  }
 
   return (
     <Div>
@@ -109,7 +124,7 @@ function Cart() {
 
       <OrangeBtn
         text={location.pathname === checkout ? 'continue' : 'checkout'}
-        action={location.pathname === checkout ?'continue': 'checkout'}
+        action={location.pathname === checkout ? 'continue' : 'checkout'}
       />
     </Div>
   );
@@ -119,6 +134,12 @@ const Div = styled.div`
   background: white;
   border-radius: 8px;
   padding: 2rem;
+
+  .empty-cart {
+    font-weight: 700;
+    text-transform: capitalize;
+    text-align: center;
+  }
 
   .header__container {
     display: flex;

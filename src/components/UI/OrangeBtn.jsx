@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
 import { cartActions } from '../../store/cartSlice';
 import { useNavigate } from 'react-router-dom';
+import { uiActions } from '../../store/uiSlice';
 
 function OrangeBtn({ text, action, cartInfo }) {
   const dispatch = useDispatch();
@@ -15,6 +16,8 @@ function OrangeBtn({ text, action, cartInfo }) {
     }
 
     if (action === 'checkout') {
+      dispatch(uiActions.toggleCart());
+      dispatch(uiActions.toggleModal());
       navigate('/checkout');
     }
   };

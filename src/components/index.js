@@ -16,4 +16,5 @@ export { default as ScrollToTop } from './shared/ScrollToTop';
 export { default as GoBack } from './shared/GoBack';
 export { default as CheckoutForm } from './checkout/CheckoutForm';
 export { default as Cart } from './Cart/Cart';
+export {default as Overlay} from './UI/Overlay'
 // export {default }

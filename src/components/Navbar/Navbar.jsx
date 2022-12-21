@@ -1,10 +1,23 @@
 import styled from 'styled-components';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import { FaBars } from 'react-icons/fa';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { pages } from '../../data';
+import { useDispatch, useSelector } from 'react-redux';
+import { uiActions } from '../../store/uiSlice';
 
 function Navbar() {
+  const dispatch = useDispatch();
+  const location = useLocation();
+  const cartItems = useSelector((state) => state.cart.cartItems).length;
+
+  const handleShowCart = () => {
+    if (location.pathname !== '/checkout') {
+      dispatch(uiActions.toggleCart());
+      dispatch(uiActions.toggleModal());
+    }
+  };
+
   return (
     <Nav>
       <div className="container">
@@ -31,10 +44,9 @@ function Navbar() {
           ))}
         </ul>
 
-        <div className="cart-container" role="button">
-          <Link to={'checkout'}>
+        <div className="cart-container" role="button" onClick={handleShowCart}>
+          {cartItems > 0 && <div className="counter">{cartItems}</div>}
           <AiOutlineShoppingCart />
-          </Link>
         </div>
       </div>
     </Nav>
@@ -52,6 +64,22 @@ const Nav = styled.nav`
   .cart-container {
     width: 23px;
     height: 20px;
+    position: relative;
+    z-index: 3;
+
+    div {
+      position: absolute;
+      top: -0.8rem;
+      right: -0.8rem;
+      background: var(--orange-main);
+      font-size: 13px;
+      font-weight: 700;
+      width: 1.3rem;
+      height: 1.3rem;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+    }
   }
 
   .container,

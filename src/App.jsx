@@ -1,5 +1,6 @@
+import { useSelector } from 'react-redux';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Audiophile, Footer, Navbar, ScrollToTop } from './components';
+import { Audiophile, Footer, Overlay, Navbar, ScrollToTop, Cart } from './components';
 import {
   Checkout,
   Earphones,
@@ -11,8 +12,19 @@ import {
 } from './pages';
 
 function App() {
+  const showOverlay = useSelector((state) => state.ui.showOverlay);
+  const showCart = useSelector((state) => state.ui.showCart);
+
   return (
     <BrowserRouter>
+      {showOverlay && <Overlay />}
+
+      {showCart && (
+        <div className="main-cart-container">
+          <Cart />
+        </div>
+      )}
+
       <ScrollToTop />
       <Navbar />
       <Routes>

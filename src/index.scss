@@ -173,3 +173,11 @@ header,
 footer {
   background-color: var(--dark);
 }
+
+.main-cart-container{
+  position :absolute;
+  z-index: 3;
+  width: 377px;
+  top: 129px;
+  right: 12%;
+}
