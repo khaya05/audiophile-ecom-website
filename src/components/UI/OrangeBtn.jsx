@@ -20,6 +20,18 @@ function OrangeBtn({ text, action, cartInfo }) {
       dispatch(uiActions.toggleModal());
       navigate('/checkout');
     }
+
+    if (action === 'continue') {
+      dispatch(uiActions.toggleModal());
+      dispatch(uiActions.toggleThanksCard());
+    }
+
+    if (action === 'back home') {
+      dispatch(uiActions.toggleModal());
+      dispatch(uiActions.toggleThanksCard());
+      dispatch(cartActions.removeAll());
+      navigate('/');
+    }
   };
 
   return (

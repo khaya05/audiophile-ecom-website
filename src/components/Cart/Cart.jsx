@@ -3,24 +3,19 @@ import { useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import { cartActions } from '../../store/cartSlice';
 import { uiActions } from '../../store/uiSlice';
-import IncrementBtn from '../UI/IncrementBtn';
 import OrangeBtn from '../UI/OrangeBtn';
 
 function Cart() {
-  const cartItems = useSelector((state) => state.cart.cartItems);
   const dispatch = useDispatch();
   const location = useLocation();
 
+  const cartItems = useSelector((state) => state.cart.cartItems);
+  const total = useSelector((state) => state.cart.total);
+  const grandTotal = useSelector((state) => state.cart.grandTotal);
+  const vat = useSelector((state) => state.cart.vat);
+  const shipping = useSelector((state) => state.cart.shipping);
+
   const checkout = '/checkout';
-
-  const total = cartItems.reduce(
-    (acc, curr) => acc + curr.price * curr.quantity,
-    0
-  );
-
-  const shipping = 50;
-  const vat = parseFloat(total * 0.15).toFixed(2);
-  const grandTotal = total + shipping;
 
   const decreaseQuantity = (id) => {
     dispatch(cartActions.decreaseQuantityInCart(id));
@@ -134,6 +129,7 @@ const Div = styled.div`
   background: white;
   border-radius: 8px;
   padding: 2rem;
+  /* width: 100%; */
 
   .empty-cart {
     font-weight: 700;

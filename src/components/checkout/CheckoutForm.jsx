@@ -24,7 +24,7 @@ function CheckoutForm() {
       <form>
         <h3>billing info</h3>
         <fieldset>
-          <div className="container">
+          <div className="input-container">
             <FormInput
               label="name"
               name="name"
@@ -61,7 +61,7 @@ function CheckoutForm() {
             placeholder="1137 Williams Avenue"
           />
 
-          <div className="container">
+          <div className="input-container">
             <FormInput
               label="zip code"
               name="zipCode"
@@ -90,7 +90,7 @@ function CheckoutForm() {
 
         <h3>payment details</h3>
         <fieldset>
-          <div className="container">
+          <div className="input-container">
             <h4>payment method</h4>
             <div>
               <FormInput
@@ -100,10 +100,7 @@ function CheckoutForm() {
                 required={true}
                 placeholder="United States"
               />
-              <FormInput
-                type='radio'
-                label='Cash on Delivery'
-              />
+              <FormInput type="radio" label="Cash on Delivery" />
             </div>
           </div>
         </fieldset>
@@ -120,6 +117,7 @@ const Form = styled.div`
 
   h2 {
     margin-bottom: 41px;
+    font-size: 2rem;
   }
 
   h3 {
@@ -133,6 +131,8 @@ const Form = styled.div`
   }
 
   fieldset {
+    margin: 0;
+    padding: 0;
     border: none;
   }
 
@@ -173,10 +173,26 @@ const Form = styled.div`
     margin-bottom: 9px;
   }
 
-  .container {
+  .input-container {
     display: flex;
     gap: 1rem;
     margin-bottom: 24px;
+    width: 100%;
+  }
+
+  @media (max-width: 90em) {
+    width: 100%;
+    padding: 30px 28px;
+  }
+
+  @media (max-width: 48em) {
+    .input-container {
+      flex-direction: column;
+    }
+
+    input {
+      width: 100%;
+    }
   }
 `;
 

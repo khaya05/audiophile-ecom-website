@@ -5,6 +5,7 @@ const uiSlice = createSlice({
   initialState: {
     showOverlay: false,
     showCart: false,
+    showThanksCard: false,
   },
   reducers: {
     toggleModal(state) {
@@ -13,6 +14,10 @@ const uiSlice = createSlice({
 
     toggleCart(state) {
       state.showCart = !state.showCart;
+    },
+
+    toggleThanksCard(state) {
+      state.showThanksCard = !state.showThanksCard;
     },
   },
 });

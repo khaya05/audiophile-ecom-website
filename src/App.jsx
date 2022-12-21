@@ -1,6 +1,15 @@
-import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Audiophile, Footer, Overlay, Navbar, ScrollToTop, Cart } from './components';
+import {
+  Audiophile,
+  Footer,
+  Overlay,
+  Navbar,
+  ScrollToTop,
+  Cart,
+  ThankYouCard,
+} from './components';
 import {
   Checkout,
   Earphones,
@@ -10,10 +19,20 @@ import {
   Product,
   Speakers,
 } from './pages';
+import { cartActions } from './store/cartSlice';
 
 function App() {
+  const dispatch = useDispatch();
   const showOverlay = useSelector((state) => state.ui.showOverlay);
   const showCart = useSelector((state) => state.ui.showCart);
+  const showThanksCard = useSelector((state) => state.ui.showThanksCard);
+  const cartItems = useSelector((state) => state.cart.cartItems);
+
+  useEffect(() => {
+    dispatch(cartActions.getTotal());
+    dispatch(cartActions.getGrandTotal());
+    dispatch(cartActions.getVat());
+  }, [cartItems]);
 
   return (
     <BrowserRouter>
@@ -24,6 +43,8 @@ function App() {
           <Cart />
         </div>
       )}
+
+      {showThanksCard && <ThankYouCard />}
 
       <ScrollToTop />
       <Navbar />

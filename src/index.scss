@@ -181,3 +181,16 @@ footer {
   top: 129px;
   right: 12%;
 }
+
+@media (max-width:90em) {
+  .main-cart-container{
+    right: 40px
+  }
+}
+
+@media (max-width:48em) {
+  .main-cart-container{
+    width: 87.2%;
+    right: 6%
+  }
+}

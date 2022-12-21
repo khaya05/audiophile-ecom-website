@@ -5,6 +5,10 @@ const cartSlice = createSlice({
   initialState: {
     count: 1,
     cartItems: [],
+    total: 0,
+    shipping: 50,
+    vat: 0,
+    grandTotal:0,
   },
 
   reducers: {
@@ -66,6 +70,21 @@ const cartSlice = createSlice({
     removeAll(state) {
       state.cartItems = [];
     },
+
+    getTotal(state) {
+      state.total = state.cartItems.reduce(
+        (total, currentVal) => total + currentVal.price * currentVal.quantity,
+        0
+      );
+    },
+
+    getGrandTotal(state) {
+      state.grandTotal = state.total + state.shipping
+    },
+
+    getVat(state) {
+      state.vat = parseFloat(state.total * 0.15).toFixed(2)
+    }
   },
 });
 
