@@ -174,37 +174,37 @@ footer {
   background-color: var(--dark);
 }
 
-.main-cart-container{
-  position :absolute;
+.main-cart-container {
+  position: absolute;
   z-index: 3;
   width: 377px;
   top: 129px;
-  right: 12%;
+  right: calc(50% - 555px);
 }
 
-@media (max-width:90em) {
-  .main-cart-container{
-    right: 40px
+@media (max-width: 90em) {
+  .main-cart-container {
+    right: 40px;
   }
 }
 
-@media (max-width:48em) {
-  .main-cart-container{
-    width: 87.2%;
-    right: 6%
+@media (max-width: 48em) {
+  .main-cart-container {
+    width: 327px;
+    right: calc(50% - 163px);
   }
 }
 
-.menu-container{
+.menu-container {
   position: absolute;
   top: 91px;
   background: white;
   width: 100%;
- z-index: 3;
+  z-index: 3;
 }
 
 @media (min-width: 90em) {
-  .menu-container{
+  .menu-container {
     display: none;
   }
 }
