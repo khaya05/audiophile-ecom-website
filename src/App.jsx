@@ -9,6 +9,7 @@ import {
   ScrollToTop,
   Cart,
   ThankYouCard,
+  Categories,
 } from './components';
 import {
   Checkout,
@@ -17,6 +18,7 @@ import {
   Headphones,
   Home,
   Product,
+  SharedLayout,
   Speakers,
 } from './pages';
 import { cartActions } from './store/cartSlice';
@@ -27,6 +29,7 @@ function App() {
   const showCart = useSelector((state) => state.ui.showCart);
   const showThanksCard = useSelector((state) => state.ui.showThanksCard);
   const cartItems = useSelector((state) => state.cart.cartItems);
+  const showMenu = useSelector((state) => state.ui.showMenu);
 
   useEffect(() => {
     dispatch(cartActions.getTotal());
@@ -38,6 +41,12 @@ function App() {
     <BrowserRouter>
       {showOverlay && <Overlay />}
 
+      {showMenu && (
+        <div className="menu-container">
+          <Categories />
+        </div>
+      )}
+
       {showCart && (
         <div className="main-cart-container">
           <Cart />
@@ -47,18 +56,17 @@ function App() {
       {showThanksCard && <ThankYouCard />}
 
       <ScrollToTop />
-      <Navbar />
       <Routes>
-        <Route path="/" exact element={<Home />} />
-        <Route path="headphones" element={<Headphones />} />
-        <Route path="speakers" element={<Speakers />} />
-        <Route path="earphones" element={<Earphones />} />
-        <Route path="product/:id" element={<Product />} />
-        <Route path="checkout" element={<Checkout />} />
-        <Route path="*" element={<Error />} />
+        <Route path="/" element={<SharedLayout />}>
+          <Route index element={<Home />} />
+          <Route path="headphones" element={<Headphones />} />
+          <Route path="speakers" element={<Speakers />} />
+          <Route path="earphones" element={<Earphones />} />
+          <Route path="product/:id" element={<Product />} />
+          <Route path="checkout" element={<Checkout />} />
+          <Route path="*" element={<Error />} />
+        </Route>
       </Routes>
-      {/* <Audiophile /> */}
-      <Footer />
     </BrowserRouter>
   );
 }

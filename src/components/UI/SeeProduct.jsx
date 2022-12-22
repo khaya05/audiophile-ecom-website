@@ -9,7 +9,7 @@ function SeeProduct(props) {
       navigate('/product/1');
     }
 
-    if (props.id === 12) {
+    if (props.id === 2) {
       navigate('/product/2');
     }
 

@@ -45,11 +45,13 @@ function ThankYouCard() {
             ))}
           </ul>
 
-          <button className="show-all" onClick={hideCartItems}>
-            {expandCartItems
-              ? 'View less'
-              : `and ${cartItems.length - 1} other item(s)`}
-          </button>
+          {cartItems.length > 1 && (
+            <button className="show-all" onClick={hideCartItems}>
+              {expandCartItems
+                ? 'View less'
+                : `and ${cartItems.length - 1} other item(s)`}
+            </button>
+          )}
         </div>
 
         <div className={`right`}>

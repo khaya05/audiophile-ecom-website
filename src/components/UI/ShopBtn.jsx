@@ -1,16 +1,25 @@
-import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { ReactComponent as ArrowRight } from '../../assets/shared/desktop/icon-arrow-right.svg';
+import { uiActions } from '../../store/uiSlice';
 
 function ShopBtn({ path }) {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate('/' + path);
+    dispatch(uiActions.toggleShowMenu());
+    dispatch(uiActions.toggleModal());
+  };
+
   return (
-    <Button>
-      <Link to={'/' + path} className="shop-btn">
-        shop{' '}
-        <span>
-          <ArrowRight />
-        </span>
-      </Link>
+    <Button onClick={handleClick}>
+      shop{' '}
+      <span>
+        <ArrowRight />
+      </span>
     </Button>
   );
 }
@@ -19,23 +28,19 @@ const Button = styled.button`
   border: none;
   background: inherit;
   margin-top: 17px;
-
-  a {
-    display: flex;
-    align-items: center;
-    gap: 13.32px;
-    border: none;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 13px;
-    line-height: 18px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: #000000;
-    opacity: 0.5;
-  }
-
-  a:hover {
+  display: flex;
+  align-items: center;
+  gap: 13.32px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #000000;
+  opacity: 0.5;
+  margin-inline: auto;
+  :hover {
     color: var(--orange-main);
   }
 `;

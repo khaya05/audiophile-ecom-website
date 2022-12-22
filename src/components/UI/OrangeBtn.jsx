@@ -24,6 +24,7 @@ function OrangeBtn({ text, action, cartInfo }) {
     if (action === 'continue') {
       dispatch(uiActions.toggleModal());
       dispatch(uiActions.toggleThanksCard());
+      window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
     }
 
     if (action === 'back home') {

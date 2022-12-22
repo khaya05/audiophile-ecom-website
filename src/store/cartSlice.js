@@ -19,7 +19,6 @@ const cartSlice = createSlice({
       if (!some) {
         state.cartItems.push(item);
       } else {
-        console.log('second case');
         state.cartItems.map((currentItem) => {
           if (currentItem.id === item.id) {
             currentItem.quantity = currentItem.quantity + item.quantity;

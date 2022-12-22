@@ -10,6 +10,7 @@ function Navbar() {
   const dispatch = useDispatch();
   const location = useLocation();
   const cartItems = useSelector((state) => state.cart.cartItems).length;
+  const showMenu = useSelector((state) => state.ui.showMenu);
 
   const handleShowCart = () => {
     if (location.pathname !== '/checkout') {
@@ -18,11 +19,21 @@ function Navbar() {
     }
   };
 
+  const handleShowMenu = () => {
+    dispatch(uiActions.toggleModal());
+    dispatch(uiActions.toggleShowMenu());
+  };
+
   return (
     <Nav>
       <div className="container">
         <div className="nav-left">
-          <div className="menu-btn-container" role="button">
+          <div
+            className="menu-btn-container"
+            role="button"
+            onClick={handleShowMenu}
+            style={{ zIndex: showMenu ? 3 : 1 }}
+          >
             <FaBars />
           </div>
 
@@ -44,7 +55,12 @@ function Navbar() {
           ))}
         </ul>
 
-        <div className="cart-container" role="button" onClick={handleShowCart}>
+        <div
+          className="cart-container"
+          role="button"
+          onClick={handleShowCart}
+          style={{ zIndex: showMenu ? 1 : 3 }}
+        >
           {cartItems > 0 && <div className="counter">{cartItems}</div>}
           <AiOutlineShoppingCart />
         </div>
@@ -55,6 +71,8 @@ function Navbar() {
 
 const Nav = styled.nav`
   color: white;
+  position: relative;
+  width: 100%;
 
   svg {
     width: 100%;
