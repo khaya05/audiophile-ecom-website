@@ -18,7 +18,7 @@ function Hero() {
             made for the passionate music enthusiast.
           </p>
           <div className="btn-container">
-            <SeeProduct class="orange" path="/products/product/123" />
+            <SeeProduct class="orange" id={4} />
           </div>
         </div>
       </div>
@@ -33,12 +33,12 @@ const Wrapper = styled.header`
   background-repeat: no-repeat;
   position: relative;
   z-index: 1;
-  
+
   h1 {
     margin-top: 1rem;
     margin-bottom: 24px;
   }
-  
+
   .info {
     display: flex;
     justify-content: space-between;
@@ -89,7 +89,7 @@ const Wrapper = styled.header`
     padding-inline: 0;
     background-image: none;
     height: 632px;
-    
+
     .container {
       background-image: url(${HeroDesktopBgImg});
       margin-inline: 0;

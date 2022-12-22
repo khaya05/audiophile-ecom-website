@@ -5,7 +5,7 @@ import { ReactComponent as ArrowRight } from '../../assets/shared/desktop/icon-a
 function ShopBtn({ path }) {
   return (
     <Button>
-      <Link to={path} className="shop-btn">
+      <Link to={'/' + path} className="shop-btn">
         shop{' '}
         <span>
           <ArrowRight />

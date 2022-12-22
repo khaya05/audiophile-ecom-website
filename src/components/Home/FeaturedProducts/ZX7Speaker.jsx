@@ -8,7 +8,7 @@ function ZX7Speaker() {
   return (
     <Wrapper>
       <h2>ZX7 speaker</h2>
-      <SeeProduct class="dark-btn" />
+      <SeeProduct class="dark-btn" id={5} />
     </Wrapper>
   );
 }
@@ -24,24 +24,24 @@ const Wrapper = styled.div`
   background-size: 100%;
   padding: 101px 24px 0;
   margin-bottom: 24px;
-  
+
   h2 {
     font-size: 28px;
     text-align: start;
     margin-bottom: 32px;
   }
-  
+
   .dark-btn {
     background-color: transparent;
     background-image: none;
   }
-  
+
   @media (min-width: 48em) {
     margin-bottom: 32px;
     padding-left: 63.5px;
     background-image: url(${TabBgImage});
   }
-  
+
   @media (min-width: 90em) {
     margin-bottom: 48px;
     padding-left: 63.5px;

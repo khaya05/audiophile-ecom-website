@@ -18,7 +18,7 @@ function YX1Earphones() {
 
       <div className="bottom">
         <h2>yx1 earphones</h2>
-        <SeeProduct class={'dark-btn'} />
+        <SeeProduct class={'dark-btn'} id={1} />
       </div>
     </Container>
   );

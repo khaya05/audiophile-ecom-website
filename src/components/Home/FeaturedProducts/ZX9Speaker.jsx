@@ -17,7 +17,7 @@ function ZX9Speaker() {
             Upgrade to premium speakers that are phenomenally built to deliver
             truly remarkable sound.
           </p>
-          <SeeProduct class={'dark-btn'} />
+          <SeeProduct class={'dark-btn'} id={6} />
         </div>
       </div>
     </Wrapper>
@@ -79,18 +79,18 @@ const Wrapper = styled.article`
   @media (min-width: 48em) {
     padding: 52px 0 64px 0;
     margin-bottom: 2rem;
-    
+
     p {
       margin-bottom: 40px;
     }
-    
+
     img {
       width: 197.21px;
       height: 237px;
       margin: 0 auto 64px;
     }
   }
-  
+
   @media (min-width: 90em) {
     margin-bottom: 56px;
     overflow: hidden;
