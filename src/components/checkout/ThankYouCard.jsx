@@ -2,11 +2,20 @@ import styled from 'styled-components';
 import OrangeBtn from '../UI/OrangeBtn';
 // import { FiCheck } from 'react-icons/fi';
 // import {BsFillCheckCircleFill} from 'react-icons/bs'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { uiActions } from '../../store/uiSlice';
 
 function ThankYouCard() {
+  const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.cartItems);
   const grandTotal = useSelector((state) => state.cart.grandTotal);
+  const expandCartItems = useSelector((state) => state.ui.expandCartItems);
+
+  const cart = expandCartItems ? cartItems : cartItems.slice(0, 1);
+
+  const hideCartItems = () => {
+    dispatch(uiActions.toggleExpandCartItems());
+  };
 
   return (
     <Card>
@@ -21,27 +30,35 @@ function ThankYouCard() {
       <div className="container">
         <div className="left">
           <ul>
-            {cartItems.map(({ id, cartImage, price, quantity, slug }) => (
+            {cart.map(({ id, cartImage, price, quantity, slug }) => (
               <li key={id}>
-                <div>
+                <div className="item-container">
                   <img src={cartImage} alt="" aria-hidden="true" />
                   <div className="price-container">
                     <p className="slug">{slug}</p>
-                    <p className="price">$ {price}</p>
+                    <p className="price">$ {price.toLocaleString()}</p>
                   </div>
                 </div>
 
-                <div className="quantity">x{quantity}</div>
+                <p className="quantity">x{quantity}</p>
               </li>
             ))}
           </ul>
 
-          <p className="show-all">and {cartItems.length - 1} other item(s)</p>
+          <button className="show-all" onClick={hideCartItems}>
+            {expandCartItems
+              ? 'View less'
+              : `and ${cartItems.length - 1} other item(s)`}
+          </button>
         </div>
 
-        <div className="right">
-          <p className="total">grand total</p>
-          <p className="price">$ {grandTotal}</p>
+        <div className={`right`}>
+          <div
+            className={`total-container ${expandCartItems && 'justify-end'}`}
+          >
+            <p className="total">grand total</p>
+            <p className="grand-price">$ {grandTotal.toLocaleString()}</p>
+          </div>
         </div>
       </div>
 
@@ -66,7 +83,7 @@ const Card = styled.div`
     letter-spacing: 0.857143px;
     text-transform: uppercase;
     text-align: start;
-    padding: 28px 0 1rem;
+    margin: 28px 0 1rem;
 
     span {
       display: block;
@@ -75,6 +92,71 @@ const Card = styled.div`
 
   .container {
     margin-block: 24px;
+    border-radius: 8px;
+
+    .left {
+      background: var(--light-gray);
+      padding: 24px;
+    }
+
+    .right {
+      background: black;
+      padding: 24px;
+    }
+  }
+
+  ul {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid hsla(0, 0%, 0%, 0.08);
+  }
+
+  li,
+  .item-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+  }
+
+  li {
+    /* border: 1px solid red; */
+  }
+
+  .item-container {
+    gap: 1rem;
+  }
+
+  .slug,
+  .price,
+  .quantity {
+    font-weight: 700;
+    font-size: 15px;
+  }
+
+  .slug {
+    line-height: 25px;
+    text-transform: uppercase;
+    color: black;
+    opacity: 1;
+  }
+
+  .show-all {
+    background: inherit;
+    border: none;
+    opacity: 0.75;
+    font-weight: 700;
+    font-size: 12px;
+    display: block;
+    margin-inline: auto;
+  }
+
+  img {
+    width: 50px;
+    height: 50px;
   }
 
   .tick-container {
@@ -82,6 +164,59 @@ const Card = styled.div`
     height: 64px;
     border-radius: 50%;
     background: var(--orange-main);
+  }
+
+  .total {
+    color: white;
+    opacity: 0.5;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 25px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .grand-price {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 25px;
+    color: #ffffff;
+    opacity: 1;
+  }
+
+  @media (min-width: 48em) {
+    padding: 48px;
+    max-width: 540px;
+    top: 154px;
+    right: calc(50% - 270px);
+
+    h3 {
+      font-size: 32px;
+      line-height: 36px;
+      letter-spacing: 1.14286px;
+      margin: 2rem 0 24px;
+    }
+
+    .container {
+      margin: 2rem 0 46px;
+      display: flex;
+      justify-content: space-between;
+      margin-inline: auto;
+    }
+
+    .left {
+      width: 55.4%;
+    }
+
+    .right {
+      width: 44.59%;
+      position: relative;
+    }
+
+    .justify-end {
+      position: absolute;
+      bottom: 3.2rem;
+    }
   }
 `;
 
