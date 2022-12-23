@@ -41,6 +41,7 @@ const Button = styled.button`
   opacity: 0.5;
   margin-inline: auto;
   :hover {
+    cursor: pointer;
     color: var(--orange-main);
   }
 `;

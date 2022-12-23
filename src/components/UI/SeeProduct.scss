@@ -11,11 +11,12 @@
 
 .orange-btn {
   color: white;
-   border: none; 
+  border: none;
   background: var(--orange-main);
 }
 
 .orange-btn:hover {
+  cursor: pointer;
   background-color: var(--orange-main-hover);
 }
 
@@ -26,6 +27,7 @@
 }
 
 .dark-btn:hover {
+  cursor: pointer;
   color: white;
   background-color: black;
 }
