@@ -4,9 +4,6 @@ import { SeeProduct } from '../';
 // import { data } from '../../data';
 
 function Hero() {
-  // const product = data.find((item) => item.slug === 'xx99-mark-two-headphones');
-
-  // console.log(product);
   return (
     <Wrapper>
       <div className="container">
@@ -39,12 +36,14 @@ const Wrapper = styled.header`
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
+    border: 1px solid red;
   }
-
+  
   .container {
     max-width: 328px;
     margin-inline: auto;
     background-image: url(${HeroBgImg}) no-repeat;
+    border: 1px solid blue;
   }
 
   p {
@@ -63,7 +62,7 @@ const Wrapper = styled.header`
   @media (min-width: 90em) {
     .container {
       display: flex;
-      /* max-width: 1110px; */
+      max-width: 1110px;
     }
 
     h1,
