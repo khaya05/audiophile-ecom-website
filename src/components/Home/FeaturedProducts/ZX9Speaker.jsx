@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import speakerImg from '../../../assets/home/desktop/image-speaker-zx9.png';
 import { SeeProduct } from '../../';
 
+
 function ZX9Speaker() {
   return (
     <Wrapper>
@@ -41,10 +42,10 @@ const Wrapper = styled.article`
     position: relative;
   }
 
-  .container::before {
+  /* .container::before {
     content: url('../../../assets/home/desktop/pattern-circles.svg');
-    /* pistion: fixed */
-  }
+    pistion: fixed
+  } */
 
   img {
     width: 172px;

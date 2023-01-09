@@ -1,24 +1,23 @@
 import styled from 'styled-components';
-import { HeroBgImg } from '../../assets';
+// import { HeroBgImg } from '../../assets';
 import { SeeProduct } from '../';
-// import { data } from '../../data';
 
 function Hero() {
   return (
     <Wrapper>
-      <div className="container">
-        <div className="info">
-          <h4>new product</h4>
-          <h1>XX99 Mark II HeadphoneS</h1>
-          <p>
-            Experience natural, lifelike audio and exceptional build quality
-            made for the passionate music enthusiast.
-          </p>
-          <div className="btn-container">
-            <SeeProduct class="orange" id={4} />
-          </div>
+      {/* <div className="container"> */}
+      <div className="info">
+        {/* <h4>new product</h4> */}
+        {/* <h1>XX99 Mark II HeadphoneS</h1> */}
+        {/* <p>
+          Experience natural, lifelike audio and exceptional build quality made
+          for the passionate music enthusiast.
+        </p> */}
+        <div className="btn-container">
+          <SeeProduct class="orange" id={4} />
         </div>
       </div>
+      {/* </div> */}
     </Wrapper>
   );
 }
@@ -31,19 +30,24 @@ const Wrapper = styled.header`
     margin-bottom: 24px;
   }
 
-  .info {
+  .inf {
+    border: 1px solid white;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
-    border: 1px solid red;
-  }
-  
-  .container {
     max-width: 328px;
     margin-inline: auto;
-    background-image: url(${HeroBgImg}) no-repeat;
-    border: 1px solid blue;
+    /* background-image: url(${HeroBgImg}) no-repeat; */
+  }
+
+  .info::before {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: hsla(0, 0%, 0%, 0.3);
+  }
+  .container {
   }
 
   p {
@@ -54,14 +58,13 @@ const Wrapper = styled.header`
   }
 
   @media (min-width: 48em) {
-    .container {
+    .info {
       max-width: 379px;
     }
   }
 
   @media (min-width: 90em) {
-    .container {
-      display: flex;
+    .info {
       max-width: 1110px;
     }
 
@@ -73,11 +76,6 @@ const Wrapper = styled.header`
 
     p {
       margin-inline: 0;
-    }
-
-    .hero-right {
-      width: 50%;
-      border: 1px solid red;
     }
   }
 `;

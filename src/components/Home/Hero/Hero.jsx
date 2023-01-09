@@ -27,36 +27,39 @@ function Hero() {
 }
 
 const Wrapper = styled.header`
-  background-image: url(${HeroMobileBgImg});
   background-size: 100%;
   background-position: 0 -6rem;
   background-repeat: no-repeat;
   position: relative;
   z-index: 1;
-
+  
   h1 {
     margin-top: 1rem;
     margin-bottom: 24px;
   }
-
+  
   .info {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
   }
-
+  
   .container {
-    max-width: 328px;
+    background-image: url(${HeroMobileBgImg});
+    background-repeat: no-repeat;
+    /* max-width: 375px; */
     margin-inline: auto;
+    width:100%;
     height: 100%;
     /* border: 1px solid white; */
     padding: 102px 24px 112px;
   }
 
-  .container::before {
+  .container::after {
     content: '';
     display: block;
+    border:1px solid white;
     width: 100%;
     height: 100%;
     position: absolute;
@@ -75,27 +78,32 @@ const Wrapper = styled.header`
   }
 
   @media (min-width: 48em) {
-    background-image: url(${HeroTabBgImg});
     background-size: cover;
     background-position: 0 -10rem;
     height: 639px;
-
+    
     .container {
-      max-width: 379px;
+      border: 1px solid red;
+      background-image: url(${HeroTabBgImg});
+      background-size: 100%;
+      background-position: 0 0;
+      width:100%;
+      
     }
   }
-
-  @media (min-width: 90em) {
-    padding-inline: 0;
-    background-image: none;
-    height: 632px;
-
-    .container {
-      background-image: url(${HeroDesktopBgImg});
-      margin-inline: 0;
+    
+    @media (min-width: 90em) {
+      padding-inline: 0;
+      background-image: none;
+      height: 632px;
+      
+      .container {
+        background-image: url(${HeroDesktopBgImg});
+        margin-inline: 0;
+        background-size: 115%;
       max-width: 1110px;
       margin-inline: auto;
-      background-position: -7rem -9rem;
+      /* background-position: -7rem -9rem; */
     }
 
     .info {

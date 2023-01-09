@@ -142,3 +142,6 @@ export { default as xx99Mk2CartImage } from './cart/image-xx99-mark-two-headphon
 export { default as yx1CartImage } from './cart/image-yx1-earphones.jpg';
 export { default as zx7CartImage } from './cart/image-zx7-speaker.jpg';
 export { default as zx9CartImage } from './cart/image-zx9-speaker.jpg';
+
+
+export {default as circles} from './home/desktop/pattern-circles.svg'
