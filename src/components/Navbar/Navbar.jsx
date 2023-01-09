@@ -6,6 +6,8 @@ import { pages } from '../../data';
 import { useDispatch, useSelector } from 'react-redux';
 import { uiActions } from '../../store/uiSlice';
 
+import { ReactComponent as Logo } from '../../assets/shared/desktop/logo.svg';
+
 function Navbar() {
   const dispatch = useDispatch();
   const location = useLocation();
@@ -37,8 +39,8 @@ function Navbar() {
             <FaBars />
           </div>
 
-          <Link to="/" className="logo">
-            audiophile
+          <Link to="/">
+            <Logo />
           </Link>
         </div>
 
@@ -115,15 +117,7 @@ const Nav = styled.nav`
   }
 
   .nav-left {
-    width: calc(50% + 64px);
-  }
-
-  .logo {
-    color: white;
-    opacity: 1;
-    font-size: 25px;
-    font-weight: 700;
-    text-decoration: none;
+    width: calc(50% + 71.5px);
   }
 
   ul {
@@ -151,7 +145,7 @@ const Nav = styled.nav`
     padding-inline: 0;
 
     .nav-left {
-      width: 128px;
+      width: 143px;
     }
 
     .menu-btn-container {

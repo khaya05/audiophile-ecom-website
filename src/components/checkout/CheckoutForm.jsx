@@ -20,7 +20,7 @@ function CheckoutForm() {
 
   return (
     <Form>
-      <h2>checkout</h2>
+      <h2>checkout (demo)</h2>
       <form>
         <h3>billing info</h3>
         <fieldset>
