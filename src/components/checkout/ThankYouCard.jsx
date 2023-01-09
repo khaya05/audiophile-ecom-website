@@ -96,16 +96,17 @@ const Card = styled.div`
 
   .container {
     margin-block: 24px;
-    border-radius: 8px;
 
     .left {
       background: var(--light-gray);
       padding: 24px;
+      border-radius: 8px 0 0 8px;
     }
-
+    
     .right {
       background: black;
       padding: 24px;
+      border-radius: 0 8px 8px 0;
     }
   }
 
