@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import OrangeBtn from '../UI/OrangeBtn';
-// import { FiCheck } from 'react-icons/fi';
-// import {BsFillCheckCircleFill} from 'react-icons/bs'
 import { useDispatch, useSelector } from 'react-redux';
 import { uiActions } from '../../store/uiSlice';
+
+import { ReactComponent as Check } from '../../assets/checkout/icon-checkmark.svg';
 
 function ThankYouCard() {
   const dispatch = useDispatch();
@@ -19,7 +19,9 @@ function ThankYouCard() {
 
   return (
     <Card>
-      <div className="tick-container">{/* <BsFillCheckCircleFill /> */}</div>
+      <div className="tick-container">
+        <Check />
+      </div>
 
       <h3>
         thank you <span>for your order</span>
@@ -124,9 +126,6 @@ const Card = styled.div`
     height: 50px;
   }
 
-  li {
-    /* border: 1px solid red; */
-  }
 
   .item-container {
     gap: 1rem;
@@ -166,6 +165,11 @@ const Card = styled.div`
     height: 64px;
     border-radius: 50%;
     background: var(--orange-main);
+    padding: .7rem;
+  }
+
+  .tick-container path{
+    fill:white;
   }
 
   .total {
