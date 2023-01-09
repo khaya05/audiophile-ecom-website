@@ -1,4 +1,4 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { ReactComponent as ArrowRight } from '../../assets/shared/desktop/icon-arrow-right.svg';
@@ -7,11 +7,15 @@ import { uiActions } from '../../store/uiSlice';
 function ShopBtn({ path }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const showMenu = useSelector((state) => state.ui.showMenu);
 
   const handleClick = () => {
     navigate('/' + path);
-    dispatch(uiActions.toggleShowMenu());
-    dispatch(uiActions.toggleModal());
+
+    if (showMenu) {
+      dispatch(uiActions.toggleShowMenu());
+      dispatch(uiActions.toggleModal());
+    }
   };
 
   return (
