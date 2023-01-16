@@ -1,0 +1,210 @@
+/* https://piccalil.li/blog/a-modern-css-reset/ */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:root {
+  --orange-main: hsla(21, 65%, 57%, 1);
+  --orange-main-hover: hsla(22, 93%, 75%, 1);
+  --light-gray: hsla(0, 0%, 94%, 1);
+  --very-light-gray: hsla(0, 0%, 98%, 1);
+  --01-white: hsla(0, 0%, 100%, 0.1);
+  --dark: hsla(0, 0%, 6%, 1);
+  --dark-hover: hsla(0, 0%, 30%, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Manrope', sans-serif;
+}
+
+h1,
+h2,
+h3,
+article h2 {
+  color: black;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+header h1,
+header h2,
+article h2 {
+  color: white;
+}
+
+h2 span {
+  color: var(--orange-main);
+}
+
+h1,
+article h2 {
+  font-size: 36px;
+  line-height: 40px;
+  text-align: center;
+  letter-spacing: 1.28571px;
+}
+
+h2 {
+  font-size: 28px;
+  line-height: 38px;
+  letter-spacing: 1px;
+}
+
+h3 {
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: 1.07143px;
+}
+
+h4 {
+  font-size: 14px;
+  color: var(--orange-main);
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 19px;
+  letter-spacing: 10px;
+  text-align: center;
+}
+
+header h4 {
+  color: white;
+  opacity: 0.5;
+}
+
+p {
+  font-size: 15px;
+  color: black;
+  opacity: 0.5;
+  line-height: 25px;
+}
+
+header p,
+footer p,
+article p {
+  color: white;
+  opacity: 0.75;
+}
+
+@media (min-width: 48em) {
+  h1,
+  article h2 {
+    font-size: 56px;
+    line-height: 58px;
+    text-align: center;
+    letter-spacing: 2px;
+  }
+  h2 {
+    font-size: 40px;
+    line-height: 44px;
+    letter-spacing: 1.42857px;
+  }
+}
+
+nav,
+header,
+footer {
+  background-color: var(--dark);
+}
+
+.main-cart-container {
+  position: absolute;
+  z-index: 3;
+  width: 377px;
+  top: 129px;
+  right: calc(50% - 555px);
+}
+
+@media (max-width: 90em) {
+  .main-cart-container {
+    right: 40px;
+  }
+}
+
+@media (max-width: 48em) {
+  .main-cart-container {
+    width: 327px;
+    right: calc(50% - 163px);
+  }
+}
+
+.menu-container {
+  position: absolute;
+  top: 91px;
+  background: white;
+  width: 100%;
+  z-index: 3;
+}
+
+@media (min-width: 90em) {
+  .menu-container {
+    display: none;
+  }
+}
