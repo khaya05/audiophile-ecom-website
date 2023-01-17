@@ -10,7 +10,7 @@ describe('YX1Earphones', () => {
     expect(productImage).toBeInTheDocument();
   });
 
-  it('image renders correctly', () => {
+  it('heading renders correctly', () => {
     render(<YX1Earphones />);
     const headingElement = screen.getByRole('heading', {
       name: 'yx1 earphones',
