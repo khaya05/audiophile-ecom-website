@@ -2,13 +2,13 @@ import styled from 'styled-components';
 import MobileBgImage from '../../../assets/home/mobile/image-speaker-zx7.jpg';
 import TabBgImage from '../../../assets/home/tablet/image-speaker-zx7.jpg';
 import DesktopBgImage from '../../../assets/home/desktop/image-speaker-zx7.jpg';
-import SeeProduct from '../../UI/SeeProduct';
+// import SeeProduct from '../../UI/SeeProduct';
 
 function ZX7Speaker() {
   return (
     <Wrapper>
       <h2>ZX7 speaker</h2>
-      <SeeProduct class="dark-btn" id={5} />
+      {/* <SeeProduct class="dark-btn" id={5} /> */}
     </Wrapper>
   );
 }
