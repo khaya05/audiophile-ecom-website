@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import CheckoutForm from './CheckoutForm';
+import user from '@testing-library/user-event';
 
 describe('CheckoutForm', () => {
   it('H2 heading renders correctly', () => {
@@ -86,12 +87,34 @@ describe('CheckoutForm', () => {
     expect(paragraphElement).not.toBeInTheDocument();
   });
 
-  // if user clicks eMoney option, eMoney number and pin inputs should be in the DOM
+  it('eMoney pin and eMoney number inputs renders  when user clicks on eMoney option', async () => {
+    user.setup();
+    render(<CheckoutForm />);
 
-  
-  // it('name input renders correctly', () => {
-  //   render(<CheckoutForm />);
-  //   const inputElement = screen.getByPlaceholderText('Alex Ward');
-  //   expect(inputElement).toBeInTheDocument();
-  // });
+    const eMoneyRadioElement = screen.getByLabelText('e-Money');
+    await user.click(eMoneyRadioElement);
+
+    const eMoneyPinInput = screen.getByPlaceholderText('9663');
+    expect(eMoneyPinInput).toBeInTheDocument();
+
+    const eMoneyNumberInput = screen.getByPlaceholderText('238519663');
+    expect(eMoneyNumberInput).toBeInTheDocument();
+  });
+
+  it.skip("cash on delivery info renders when user clicks on cash-on-delivery option, and eMoney pin and eMoney number inputs don't render", async () => {
+    user.setup();
+    render(<CheckoutForm />);
+
+    const cashRadioElement = screen.getByLabelText('cash on delivery');
+    await user.click(cashRadioElement);
+
+    // const paragraphElement = screen.getByRole('paragraph');
+    // expect(paragraphElement).toBeInTheDocument();
+
+    // const eMoneyNumberInput = screen.queryByPlaceholderText('238519663');
+    // expect(eMoneyNumberInput).not.toBeInTheDocument();
+
+    // const eMoneyPinInput = screen.queryByPlaceholderText('9663');
+    // expect(eMoneyPinInput).not.toBeInTheDocument();
+  });
 });
