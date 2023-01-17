@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import SeeProduct from '../../UI/SeeProduct';
+// import SeeProduct from '../../UI/SeeProduct';
 import MobileImg from '../../../assets/home/mobile/image-earphones-yx1.jpg';
 import TabImg from '../../../assets/home/tablet/image-earphones-yx1.jpg';
 import DesktopImg from '../../../assets/home/desktop/image-earphones-yx1.jpg';
@@ -17,7 +17,7 @@ function YX1Earphones() {
 
       <div className="bottom">
         <h2>yx1 earphones</h2>
-        <SeeProduct class={'dark-btn'} id={1} />
+        {/* <SeeProduct class={'dark-btn'} id={1} /> */}
       </div>
     </Container>
   );
