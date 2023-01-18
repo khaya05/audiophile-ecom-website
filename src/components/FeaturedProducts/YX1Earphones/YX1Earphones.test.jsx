@@ -1,7 +1,5 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen } from '../../../test-utils';
 import YX1Earphones from './YX1Earphones';
-
-// TODO: check how to test components that uses react-router
 
 describe('YX1Earphones', () => {
   it('product image renders correctly', () => {
@@ -16,5 +14,11 @@ describe('YX1Earphones', () => {
       name: 'yx1 earphones',
     });
     expect(headingElement).toBeInTheDocument();
+  });
+
+  it('see product button renders correctly', () => {
+    render(<YX1Earphones />);
+    const buttonElement = screen.getByRole('button');
+    expect(buttonElement).toBeInTheDocument();
   });
 });

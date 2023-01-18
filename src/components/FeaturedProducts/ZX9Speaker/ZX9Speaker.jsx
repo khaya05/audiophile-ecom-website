@@ -8,7 +8,7 @@ function ZX9Speaker() {
     <Wrapper>
       <div className="container">
         <div className="top">
-          <img src={speakerImg} alt=" zx9 speaker" />
+          <img src={speakerImg} alt="zx9 speaker" />
         </div>
         <div className="bottom">
           <h2>
