@@ -40,21 +40,21 @@ function Footer() {
 
         <ul className="socials">
           <li>
-            <a href="#">
+            <button href="#">
               <Facebook />
-            </a>
+            </button>
           </li>
 
           <li>
-            <a href="#">
+            <button href="#">
               <Twitter />
-            </a>
+            </button>
           </li>
 
           <li>
-            <a href="#">
+            <button href="#">
               <Instagram />
-            </a>
+            </button>
           </li>
         </ul>
       </div>
@@ -108,7 +108,14 @@ const Container = styled.footer`
     margin: 48px 0 38px;
 
     li {
-      a:hover path {
+
+      button{
+        border:none;
+        background:inherit;
+        cursor: pointer;
+      }
+
+      button:hover path {
         fill: var(--orange-main);
       }
     }
@@ -146,7 +153,6 @@ const Container = styled.footer`
     .container {
       margin-inline: 39px;
       position: relative;
-      /* border: 1px solid red; */
     }
 
     img {
