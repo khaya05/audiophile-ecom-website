@@ -44,12 +44,17 @@
         "functions": 80,
         "lines": 80,
         "statements": -10
+      },
+      "transform": {
+        "^.+\\.tsx?$": "esbuild-jest"
       }
     }
   },
   "devDependencies": {
     "@testing-library/dom": "^8.20.0",
     "@testing-library/user-event": "^14.4.3",
+    "esbuild": "^0.17.3",
+    "esbuild-jest": "^0.5.0",
     "nanoid": "^4.0.0",
     "react-icons": "^4.7.1",
     "react-router-dom": "^6.6.2",
