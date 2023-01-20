@@ -36,9 +36,9 @@ describe('ZX9Speaker', () => {
     const buttonElement = screen.getByRole('button');
     await user.click(buttonElement);
 
-    const newProductHeading = screen.queryByRole('heading', {
+    const productNameElement = screen.queryByRole('heading', {
       level: 2,
     });
-    expect(newProductHeading).toBeInTheDocument();
+    expect(productNameElement).toBeInTheDocument();
   });
 });
