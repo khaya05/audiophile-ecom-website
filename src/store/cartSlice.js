@@ -21,7 +21,8 @@ const cartSlice = createSlice({
       } else {
         state.cartItems.map((currentItem) => {
           if (currentItem.id === item.id) {
-            currentItem.quantity = currentItem.quantity + item.quantity;
+            return (currentItem.quantity =
+              currentItem.quantity + item.quantity);
           }
         });
       }
