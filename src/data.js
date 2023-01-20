@@ -1,4 +1,3 @@
-import { nanoid } from 'nanoid';
 import {
   EarphonesCat,
   HeadphonesCat,
@@ -103,36 +102,36 @@ import {
 
 export const pages = [
   {
-    id: nanoid(),
+    id: 1,
     page: 'home',
   },
   {
-    id: nanoid(),
+    id: 2,
     page: 'headphones',
   },
   {
-    id: nanoid(),
+    id: 3,
     page: 'speakers',
   },
   {
-    id: nanoid(),
+    id: 4,
     page: 'earphones',
   },
 ];
 
 export const categories = [
   {
-    id: nanoid(),
+    id: 'cat-1',
     name: 'headphones',
     img: HeadphonesCat,
   },
   {
-    id: nanoid(),
+    id: 'cat-2',
     name: 'speakers',
     img: SpeakersCat,
   },
   {
-    id: nanoid(),
+    id: 'cat-3',
     name: 'earphones',
     img: EarphonesCat,
   },
