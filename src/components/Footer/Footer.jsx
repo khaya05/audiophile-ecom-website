@@ -14,7 +14,7 @@ function Footer() {
         <div className="logo-nav-container">
           <img src={Logo} alt="logo" />
 
-          <ul className="nav-links">
+          <ul className="nav-links" data-testid='navigation links'>
             {pages.map(({ id, page }) => (
               <li key={id}>
                 <NavLink
@@ -38,7 +38,7 @@ function Footer() {
           <p className="copyright">Copyright 2021. All Rights Reserved</p>
         </div>
 
-        <ul className="socials">
+        <ul className="socials" data-testid='social media links'>
           <li>
             <button href="#">
               <Facebook />
@@ -108,10 +108,9 @@ const Container = styled.footer`
     margin: 48px 0 38px;
 
     li {
-
-      button{
-        border:none;
-        background:inherit;
+      button {
+        border: none;
+        background: inherit;
         cursor: pointer;
       }
 
