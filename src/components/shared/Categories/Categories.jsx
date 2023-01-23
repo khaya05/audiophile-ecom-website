@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { categories } from '../../data';
-import { Category } from '../';
+import { categories } from '../../../data';
+import { Category } from '../..';
 
 function Categories() {
   return (

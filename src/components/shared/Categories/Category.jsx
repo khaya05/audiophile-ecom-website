@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import ShopBtn from '../UI/ShopBtn';
+import ShopBtn from '../../UI/ShopBtn';
 
 function Category({ img, name }) {
   return (

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import SeeProduct from '../UI/SeeProduct';
+import SeeProduct from '../../UI/SeeProduct';
 
 function ProductCard(props) {
   return (
@@ -10,7 +10,7 @@ function ProductCard(props) {
           media="(min-width:48em)"
           srcSet={props.product.categoryImage.tablet}
         />
-        <img src={props.product.image.mobile} alt='product' />
+        <img src={props.product.image.mobile} alt="product" />
       </picture>
 
       <div className="right">

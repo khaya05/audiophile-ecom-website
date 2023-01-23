@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { desktopBestGear, mobileBestGear, tabBestGear } from '../../assets';
+import { desktopBestGear, mobileBestGear, tabBestGear } from '../../../assets';
 
 function Audiophile() {
   return (

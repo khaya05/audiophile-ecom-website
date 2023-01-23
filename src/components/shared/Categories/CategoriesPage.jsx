@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Categories from './Categories';
-import ProductCard from './ProductCard';
+import ProductCard from '../ProductCard/ProductCard';
 
 function CategoriesPage({ heading, products }) {
   return (
@@ -57,7 +57,7 @@ const Container = styled.div`
       margin-bottom: 160px;
     }
 
-    .products{
+    .products {
       gap: 160px;
     }
   }
