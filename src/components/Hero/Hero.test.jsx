@@ -32,18 +32,4 @@ describe('Hero', () => {
     const buttonElement = screen.getByRole('button');
     expect(buttonElement).toBeInTheDocument();
   });
-
-  it.skip('renders xx99 product page when user clicks see product button', async () => {
-    user.setup();
-    render(<Hero />);
-    const buttonElement = screen.getByRole('button');
-
-    await user.click(buttonElement);
-    expect(
-      screen.getByRole('heading', {
-        name: 'XX99 Mark II Headphones',
-        level: 2,
-      })
-    ).toBeInTheDocument();
-  });
 });
