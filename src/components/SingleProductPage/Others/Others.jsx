@@ -16,7 +16,7 @@ function Others({ others }) {
               <picture>
                 <source media="(min-width:90em)" srcSet={image.mobile} />
                 <source media="(min-width:48em)" srcSet={image.tablet} />
-                <img src={currentItem.categoryImage.tablet} alt="name" />
+                <img src={currentItem.categoryImage.tablet} alt="product" />
               </picture>
 
               <h2>{name}</h2>
