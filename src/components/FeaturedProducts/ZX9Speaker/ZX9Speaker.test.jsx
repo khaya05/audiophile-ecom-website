@@ -1,6 +1,5 @@
 import { render, screen } from '../../../test-utils';
 import ZX9Speaker from './ZX9Speaker';
-import user from '@testing-library/user-event';
 
 describe('ZX9Speaker', () => {
   it('product image renders correctly', () => {
@@ -27,18 +26,5 @@ describe('ZX9Speaker', () => {
     render(<ZX9Speaker />);
     const buttonElement = screen.getByRole('button');
     expect(buttonElement).toBeInTheDocument();
-  });
-
-  it.skip('when see product button is clicked, page navigates to the product page', async () => {
-    user.setup();
-
-    render(<ZX9Speaker />);
-    const buttonElement = screen.getByRole('button');
-    await user.click(buttonElement);
-
-    const newProductHeading = screen.queryByRole('heading', {
-      level: 4,
-    });
-    expect(newProductHeading).toBeInTheDocument();
   });
 });
