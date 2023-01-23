@@ -33,18 +33,19 @@ function Navbar() {
           <div
             className="menu-btn-container"
             role="button"
+            aria-label='mobile toggle menu'
             onClick={handleShowMenu}
             style={{ zIndex: showMenu ? 3 : 1 }}
           >
             <FaBars />
           </div>
 
-          <Link to="/">
+          <Link to="/" data-testid="logo">
             <Logo />
           </Link>
         </div>
 
-        <ul>
+        <ul aria-label='navigation'>
           {pages.map(({ page, id }) => (
             <li key={id}>
               <NavLink
@@ -60,6 +61,7 @@ function Navbar() {
         <div
           className="cart-container"
           role="button"
+          aria-label='cart'
           onClick={handleShowCart}
           style={{ zIndex: showMenu ? 1 : 3 }}
         >
