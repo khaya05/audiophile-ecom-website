@@ -1,5 +1,5 @@
 import { render, screen } from '../../../test-utils';
-import Audiophile from './Audiophile';
+import Audiophile from './AboutUs';
 
 describe('Audiophile', () => {
   it('image renders correctly', () => {
