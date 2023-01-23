@@ -1,6 +1,5 @@
 import { render, screen } from '../../test-utils';
 import Hero from './Hero';
-import user from '@testing-library/user-event';
 
 describe('Hero', () => {
   it('new product heading renders correctly', () => {
