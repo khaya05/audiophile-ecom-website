@@ -10,7 +10,7 @@ function ProductCard(props) {
           media="(min-width:48em)"
           srcSet={props.product.categoryImage.tablet}
         />
-        <img src={props.product.image.mobile} alt={props.product.name} />
+        <img src={props.product.image.mobile} alt='product' />
       </picture>
 
       <div className="right">
