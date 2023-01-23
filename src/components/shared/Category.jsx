@@ -21,17 +21,13 @@ const Container = styled.div`
   width: 100%;
   border-radius: 8px;
   text-align: center;
-  padding-top:88px;
+  padding-top: 88px;
 
   img {
     position: absolute;
     left: calc(50% - 73.5px);
     width: 147px;
     top: -3rem;
-  }
-
-  h3 {
-
   }
 `;
 
