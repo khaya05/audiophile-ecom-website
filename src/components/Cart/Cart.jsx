@@ -129,7 +129,6 @@ const Div = styled.div`
   background: white;
   border-radius: 8px;
   padding: 2rem;
-  /* width: 100%; */
 
   .empty-cart {
     font-weight: 700;
