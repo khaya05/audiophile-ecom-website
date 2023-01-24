@@ -38,31 +38,49 @@ const Wrapper = styled.header`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 87%;
+    max-width: 530px;
+    margin-inline: auto;
     flex-direction: column;
+    position: relative;
+    z-index: 2;
   }
 
   .container {
     background-image: url(${HeroMobileBgImg});
     background-repeat: no-repeat;
-    /* max-width: 375px; */
+    background-size: 100%;
+    background-position: 50% 0;
     margin-inline: auto;
     width: 100%;
     height: 100%;
     padding: 102px 24px 112px;
   }
+  
+  @media (min-width:430px) {
+    .container {
+      background-image: url(${HeroTabBgImg});
+      background-size: 110%;
+    }
+  }
 
-  .container::after {
+  @media (min-width:520px) {
+    .container {
+      background-size: 80%;
+      background-position: 50% 20%;
+    }
+  }
+  .container::before {
     content: '';
     display: block;
-    /* border:1px solid white; */
     width: 100%;
     height: 100%;
     position: absolute;
     top: 0;
     left: 0;
     background-color: black;
-    opacity: 0.5;
-    z-index: -1;
+    opacity: 0.7;
+    z-index: 1;
   }
 
   p {
@@ -78,11 +96,14 @@ const Wrapper = styled.header`
     height: 639px;
 
     .container {
-      /* border: 1px solid red; */
       background-image: url(${HeroTabBgImg});
-      background-size: 100%;
-      background-position: 0 0;
+      background-size: contain;
+      background-position: 50% 0;
       width: 100%;
+    }
+
+    .info {
+      width: 49%;
     }
   }
 
@@ -97,12 +118,13 @@ const Wrapper = styled.header`
       background-size: 115%;
       max-width: 1110px;
       margin-inline: auto;
-      /* background-position: -7rem -9rem; */
     }
 
     .info {
+      margin-inline: 0;
+      margin-top: 4rem;
       align-items: start;
-      max-width: 375px;
+      max-width: 398px;
     }
 
     h1,
@@ -113,6 +135,7 @@ const Wrapper = styled.header`
 
     p {
       margin-inline: 0;
+      width: 100%;
     }
 
     .hero-right {
