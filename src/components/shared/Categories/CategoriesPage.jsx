@@ -3,6 +3,10 @@ import Categories from './Categories';
 import ProductCard from '../ProductCard/ProductCard';
 
 function CategoriesPage({ heading, products }) {
+  products = products.sort((a, b) => {
+    return a.new < b.new ? 1 : -1;
+  });
+
   return (
     <>
       <Container>
