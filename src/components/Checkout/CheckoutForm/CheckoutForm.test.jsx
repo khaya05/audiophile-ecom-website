@@ -100,21 +100,4 @@ describe('CheckoutForm', () => {
     const eMoneyNumberInput = screen.getByPlaceholderText('238519663');
     expect(eMoneyNumberInput).toBeInTheDocument();
   });
-
-  it.skip("cash on delivery info renders when user clicks on cash-on-delivery option, and eMoney pin and eMoney number inputs don't render", async () => {
-    user.setup();
-    render(<CheckoutForm />);
-
-    const cashRadioElement = screen.getByLabelText('cash on delivery');
-    await user.click(cashRadioElement);
-
-    // const paragraphElement = screen.getByRole('paragraph');
-    // expect(paragraphElement).toBeInTheDocument();
-
-    // const eMoneyNumberInput = screen.queryByPlaceholderText('238519663');
-    // expect(eMoneyNumberInput).not.toBeInTheDocument();
-
-    // const eMoneyPinInput = screen.queryByPlaceholderText('9663');
-    // expect(eMoneyPinInput).not.toBeInTheDocument();
-  });
 });

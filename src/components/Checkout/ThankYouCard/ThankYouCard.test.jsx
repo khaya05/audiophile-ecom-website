@@ -22,23 +22,15 @@ describe('ThankYouCart', () => {
     expect(listElement).toBeInTheDocument();
   });
 
-  it.skip('list items renders correctly', () => {
+  it('grand total paragraph renders correctly', () => {
     render(<ThankYouCard />);
-    const listItemElement = screen.queryByRole('listitem') 
-    expect(listItemElement).toBeInTheDocument()
-  })
-
-   it('grand total paragraph renders correctly', () => {
-     render(<ThankYouCard />);
-     const paragraphElement = screen.getByText(
-       'grand total'
-     );
-     expect(paragraphElement).toBeInTheDocument();
-   });
+    const paragraphElement = screen.getByText('grand total');
+    expect(paragraphElement).toBeInTheDocument();
+  });
 
   it('back home button renders', () => {
-    render(<ThankYouCard />)
-    const buttonElement = screen.getByRole("button", { name: 'back home' })
-    expect(buttonElement).toBeInTheDocument()
-  })
+    render(<ThankYouCard />);
+    const buttonElement = screen.getByRole('button', { name: 'back home' });
+    expect(buttonElement).toBeInTheDocument();
+  });
 });
