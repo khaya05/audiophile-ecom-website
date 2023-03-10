@@ -29,6 +29,7 @@ function OrangeBtn({ text, action, cartInfo }) {
       dispatch(uiActions.toggleModal());
       dispatch(uiActions.toggleThanksCard());
       dispatch(cartActions.removeAll());
+      localStorage.clear()
       navigate('/');
     }
   };
@@ -48,7 +49,7 @@ const Button = styled.button`
   width: 100%;
   text-transform: uppercase;
   font-weight: 700;
-  font-size: 13px;
+  font-size: 12px;
   line-height: 18px;
   letter-spacing: 1px;
 

@@ -40,6 +40,7 @@ function CheckoutForm() {
               name="name"
               type="text"
               required={true}
+              errorMessage="This field is required"
               placeholder="Alex Ward"
             />
 
@@ -49,6 +50,7 @@ function CheckoutForm() {
               name="email"
               type="email"
               required={true}
+              errorMessage="This field is required"
               placeholder="alexie@email.com"
             />
           </div>
@@ -59,6 +61,7 @@ function CheckoutForm() {
             name="phone"
             type="text"
             required={true}
+            errorMessage="This field is required"
             placeholder="+1 202-555-0123"
           />
         </fieldset>
@@ -71,6 +74,7 @@ function CheckoutForm() {
             name="address"
             type="text"
             required={true}
+            errorMessage="This field is required"
             placeholder="1137 Williams Avenue"
           />
 
@@ -81,6 +85,7 @@ function CheckoutForm() {
               name="zipCode"
               type="text"
               required={true}
+              errorMessage="This field is required"
               placeholder=" 10002"
             />
 
@@ -90,6 +95,7 @@ function CheckoutForm() {
               name="city"
               type="text"
               required={true}
+              errorMessage="This field is required"
               placeholder="New York"
             />
           </div>
@@ -100,6 +106,7 @@ function CheckoutForm() {
             name="country"
             type="text"
             required={true}
+            errorMessage="This field is required"
             placeholder="United States"
           />
         </fieldset>
@@ -236,14 +243,27 @@ const Form = styled.div`
     margin-bottom: 24px;
   }
 
+  .field-container span {
+    display: hidden;
+  }
+
+  .field-container span,
   label {
-    display: block;
-    text-transform: uppercase;
-    font-weight: 700;
     font-size: 12px;
+    text-transform: capitalize;
+    font-weight: 700;
     line-height: 16px;
     letter-spacing: -0.214286px;
+  }
+
+  .field-container {
     margin-bottom: 9px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  label {
+    display: block;
   }
 
   .input-container {
@@ -303,6 +323,10 @@ const Form = styled.div`
     .radio-label {
       width: 100%;
     }
+
+    /* input[name='country'] {
+      width: 50%;
+    } */
 
     input[type='text'],
     input[type='email'] {

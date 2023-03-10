@@ -6,10 +6,14 @@ function FormInput({
   placeholder,
   onChange,
   value,
+  errorMessage,
 }) {
   return (
     <div>
-      <label htmlFor={name}>{label}</label>
+      <div className="field-container">
+        <label htmlFor={name}>{label}</label>
+        <span>{errorMessage}</span>
+      </div>
       <input
         type={type}
         name={name}

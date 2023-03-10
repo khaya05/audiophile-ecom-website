@@ -11,8 +11,12 @@ import { ReactComponent as Logo } from '../../assets/shared/desktop/logo.svg';
 function Navbar() {
   const dispatch = useDispatch();
   const location = useLocation();
-  const cartItems = useSelector((state) => state.cart.cartItems).length;
+  const cartItems = useSelector((state) => state.cart.cartItems);
   const showMenu = useSelector((state) => state.ui.showMenu);
+
+  const noOfItemsInCart = cartItems.reduce((total, currVal) => {
+    return (total += currVal.quantity);
+  }, 0);
 
   const handleShowCart = () => {
     if (location.pathname !== '/checkout') {
@@ -33,7 +37,7 @@ function Navbar() {
           <div
             className="menu-btn-container"
             role="button"
-            aria-label='mobile toggle menu'
+            aria-label="mobile toggle menu"
             onClick={handleShowMenu}
             style={{ zIndex: showMenu ? 3 : 1 }}
           >
@@ -45,7 +49,7 @@ function Navbar() {
           </Link>
         </div>
 
-        <ul aria-label='navigation'>
+        <ul aria-label="navigation">
           {pages.map(({ page, id }) => (
             <li key={id}>
               <NavLink
@@ -61,11 +65,11 @@ function Navbar() {
         <div
           className="cart-container"
           role="button"
-          aria-label='cart'
+          aria-label="cart"
           onClick={handleShowCart}
           style={{ zIndex: showMenu ? 1 : 3 }}
         >
-          {cartItems > 0 && <div className="counter">{cartItems}</div>}
+          {cartItems.length > 0 && <div className="counter">{noOfItemsInCart}</div>}
           <AiOutlineShoppingCart />
         </div>
       </div>
