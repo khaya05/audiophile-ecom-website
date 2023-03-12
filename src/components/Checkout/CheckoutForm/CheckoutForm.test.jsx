@@ -71,16 +71,6 @@ describe('CheckoutForm', () => {
     expect(cashRadioElement).toBeInTheDocument();
   });
 
-  it("eMoney input fields don't render", () => {
-    render(<CheckoutForm />);
-
-    const eMoneyNumberInput = screen.queryByPlaceholderText('238519663');
-    expect(eMoneyNumberInput).not.toBeInTheDocument();
-
-    const eMoneyPinInput = screen.queryByPlaceholderText('9663');
-    expect(eMoneyPinInput).not.toBeInTheDocument();
-  });
-
   it("cash on delivery info don't render", () => {
     render(<CheckoutForm />);
     const paragraphElement = screen.queryByRole('paragraph');

@@ -12,7 +12,7 @@ function CheckoutForm() {
     zipCode: '',
     city: '',
     country: '',
-    paymentMethod: '',
+    paymentMethod: 'eMoney',
     eMoneyPin: '',
     eMoneyNumber: '',
   });
@@ -122,6 +122,7 @@ function CheckoutForm() {
                   name="paymentMethod"
                   id="eMoney"
                   value={'eMoney'}
+                  checked={customer.paymentMethod === 'eMoney'}
                   onChange={handleChange}
                 />
                 e-Money
@@ -133,6 +134,7 @@ function CheckoutForm() {
                   name="paymentMethod"
                   id="cash"
                   value={'cash'}
+                  checked={customer.paymentMethod === 'cash'}
                   onChange={handleChange}
                 />
                 cash on delivery
@@ -148,6 +150,8 @@ function CheckoutForm() {
                 label="e-Money Number"
                 placeholder="238519663"
                 name="eMoneyNumber"
+                required={true}
+                errorMessage="This field is required"
                 value={customer.eMoneyNumber}
               />
 
@@ -157,6 +161,8 @@ function CheckoutForm() {
                 label="e-Money Pin"
                 placeholder="9663"
                 name="eMoneyPin"
+                required={true}
+                errorMessage="This field is required"
                 value={customer.eMoneyPin}
               />
             </div>
@@ -280,14 +286,23 @@ const Form = styled.div`
     gap: 1rem;
     padding: 18px 1rem;
     border-radius: 8px;
-    border: 1px solid hsla(0, 0%, 0%, 0.2);
     width: 309px;
     cursor: pointer;
+    margin-bottom: 20px;
+    border: 1px solid hsla(0, 0%, 0%, 0.2);
   }
 
   input[type='radio'] {
     height: 20px;
     width: 20px;
+  }
+
+  input[type='radio']:checked {
+    accent-color: var(--orange-main);
+  }
+
+  input[type='radio']:checked + .radio-label {
+    border: 1px solid var(--orange-main);
   }
 
   .e-money-details {
