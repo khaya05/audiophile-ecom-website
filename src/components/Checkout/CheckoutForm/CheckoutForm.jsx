@@ -1,21 +1,10 @@
-import { useState } from 'react';
 import styled from 'styled-components';
 import FormInput from '../FormInput/FormInput';
 import { ReactComponent as CashIcon } from '../../../assets/checkout/icon-cash-on-delivery.svg';
+import { useGlobalContext } from '../../../context/context';
 
 function CheckoutForm() {
-  const [customer, setCustomer] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    address: '',
-    zipCode: '',
-    city: '',
-    country: '',
-    paymentMethod: 'eMoney',
-    eMoneyPin: '',
-    eMoneyNumber: '',
-  });
+  const { customer, setCustomer } = useGlobalContext();
 
   const handleChange = (e) => {
     const { value, name } = e.target;
