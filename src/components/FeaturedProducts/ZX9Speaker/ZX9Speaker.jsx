@@ -10,7 +10,7 @@ function ZX9Speaker() {
         <div className="top">
           <img src={speakerImg} alt="zx9 speaker" />
         </div>
-        <div className="bottom">
+        <main className="bottom">
           <h2>
             zx9 <span>speaker</span>
           </h2>
@@ -19,7 +19,7 @@ function ZX9Speaker() {
             truly remarkable sound.
           </p>
           <SeeProduct class={'dark-btn'} id={6} />
-        </div>
+        </main>
       </div>
     </Wrapper>
   );
@@ -99,7 +99,7 @@ const Wrapper = styled.article`
     max-width: 1110px;
     background-position: -9rem -1rem;
     background-size: 100%;
-
+    height: 560px;
     img {
       width: 410px;
       height: 493px;
@@ -111,7 +111,7 @@ const Wrapper = styled.article`
 
     .top {
       position: relative;
-      bottom: -9rem;
+      bottom: -2rem;
     }
 
     .container {

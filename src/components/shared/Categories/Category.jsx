@@ -14,7 +14,7 @@ function Category({ img, name }) {
   );
 }
 
-const Container = styled.div`
+const Container = styled.nav`
   background-color: var(--light-gray);
   position: relative;
   height: 165px;

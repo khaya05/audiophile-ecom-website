@@ -38,21 +38,24 @@ function Footer() {
           <p className="copyright">Copyright 2021. All Rights Reserved</p>
         </div>
 
-        <ul className="socials" data-testid='social media links'>
+        <ul className="socials" data-testid='social media links' aria-label='social media links'>
           <li>
             <button href="#">
+              <span>facebook</span>
               <Facebook />
             </button>
           </li>
 
           <li>
             <button href="#">
+              <span>twitter</span>
               <Twitter />
             </button>
           </li>
 
           <li>
             <button href="#">
+              <span>instagram</span>
               <Instagram />
             </button>
           </li>
@@ -112,6 +115,9 @@ const Container = styled.footer`
         border: none;
         background: inherit;
         cursor: pointer;
+        span{
+          display: none;
+        }
       }
 
       button:hover path {

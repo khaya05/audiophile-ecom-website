@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Link, NavLink, useLocation } from 'react-router-dom';
+import {  NavLink, useLocation } from 'react-router-dom';
 import { FaBars } from 'react-icons/fa';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { pages } from '../../data';
@@ -44,9 +44,9 @@ function Navbar() {
             <FaBars />
           </div>
 
-          <Link to="/" data-testid="logo">
+          <div data-testid="logo">
             <Logo />
-          </Link>
+          </div>
         </div>
 
         <ul aria-label="navigation">
@@ -69,7 +69,9 @@ function Navbar() {
           onClick={handleShowCart}
           style={{ zIndex: showMenu ? 1 : 3 }}
         >
-          {cartItems.length > 0 && <div className="counter">{noOfItemsInCart}</div>}
+          {cartItems.length > 0 && (
+            <div className="counter">{noOfItemsInCart}</div>
+          )}
           <AiOutlineShoppingCart />
         </div>
       </div>
