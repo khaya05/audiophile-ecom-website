@@ -78,8 +78,8 @@ const Wrapper = styled.header`
     position: absolute;
     top: 0;
     left: 0;
-    background-color: black;
-    opacity: 0.7;
+    background-color: var(--dark);
+    opacity: 0.8;
     z-index: 1;
   }
 

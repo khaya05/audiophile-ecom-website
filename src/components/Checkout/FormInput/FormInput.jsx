@@ -7,12 +7,13 @@ function FormInput({
   onChange,
   value,
   errorMessage,
+  pattern
 }) {
   return (
-    <div>
+    <fieldset>
       <div className="field-container">
         <label htmlFor={name}>{label}</label>
-        <span>{errorMessage}</span>
+        {/* <span>{errorMessage}</span> */}
       </div>
       <input
         type={type}
@@ -22,8 +23,9 @@ function FormInput({
         required={required}
         onChange={(e) => onChange(e)}
         value={value}
+        pattern={pattern}
       />
-    </div>
+    </fieldset>
   );
 }
 

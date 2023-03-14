@@ -31,6 +31,8 @@ function CheckoutForm() {
               required={true}
               errorMessage="This field is required"
               placeholder="Alex Ward"
+              value={customer.name}
+              pattern="^[A-Za-z]{3,16}$"
             />
 
             <FormInput
@@ -41,6 +43,7 @@ function CheckoutForm() {
               required={true}
               errorMessage="This field is required"
               placeholder="alexie@email.com"
+              value={customer.email}
             />
           </div>
 
@@ -51,7 +54,9 @@ function CheckoutForm() {
             type="text"
             required={true}
             errorMessage="This field is required"
-            placeholder="+1 202-555-0123"
+            placeholder="0761234567"
+            value={customer.phone}
+            pattern="^[0-9]{3,16}$"
           />
         </fieldset>
 
@@ -65,6 +70,8 @@ function CheckoutForm() {
             required={true}
             errorMessage="This field is required"
             placeholder="1137 Williams Avenue"
+            value={customer.address}
+            pattern="^[A-Za-z0-9]{3,24}$"
           />
 
           <div className="input-container">
@@ -76,6 +83,8 @@ function CheckoutForm() {
               required={true}
               errorMessage="This field is required"
               placeholder=" 10002"
+              value={customer.zipCode}
+              pattern="^[0-9]{3,6}$"
             />
 
             <FormInput
@@ -86,6 +95,8 @@ function CheckoutForm() {
               required={true}
               errorMessage="This field is required"
               placeholder="New York"
+              value={customer.city}
+              pattern="^[A-Za-z]{3,24}$"
             />
           </div>
 
@@ -97,6 +108,8 @@ function CheckoutForm() {
             required={true}
             errorMessage="This field is required"
             placeholder="United States"
+            value={customer.city}
+            pattern="^[A-Za-z]{3,56}$"
           />
         </fieldset>
 
@@ -213,7 +226,8 @@ const Form = styled.div`
     height: 56px;
     width: 309px;
     border-radius: 8px;
-    border: 1px solid #cfcfcf;
+    border: none;
+    outline: 1px solid #cfcfcf;
     padding: 24px 1rem;
     font-weight: 700;
     font-size: 14px;
@@ -224,9 +238,12 @@ const Form = styled.div`
 
   input[type='text']:focus,
   input[type='email']:focus {
-    border: none;
     outline: 1px solid var(--orange-main);
   }
+
+  /* input:invalid {
+    outline: 1px solid red;
+  } */
 
   input[name='phone'],
   input[name='country'] {
@@ -248,6 +265,8 @@ const Form = styled.div`
     text-transform: capitalize;
     font-weight: 700;
     line-height: 16px;
+    font-family: 'Manrope';
+    font-family:700;
     letter-spacing: -0.214286px;
   }
 

@@ -3,12 +3,12 @@ import { useDispatch } from 'react-redux';
 import { cartActions } from '../../store/cartSlice';
 import { useNavigate } from 'react-router-dom';
 import { uiActions } from '../../store/uiSlice';
-import { useGlobalContext } from '../../context/context';
+// import { useGlobalContext } from '../../context/context';
 
 function OrangeBtn({ text, action, cartInfo }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const {customer} = useGlobalContext()
+  // const {customer} = useGlobalContext()
 
   const handleClick = () => {
     if (action === 'add to cart') {
