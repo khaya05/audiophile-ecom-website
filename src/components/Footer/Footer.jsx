@@ -14,7 +14,7 @@ function Footer() {
         <div className="logo-nav-container">
           <img src={Logo} alt="logo" />
 
-          <ul className="nav-links" data-testid='navigation links'>
+          <ul className="nav-links" data-testid="navigation links">
             {pages.map(({ id, page }) => (
               <li key={id}>
                 <NavLink
@@ -27,7 +27,6 @@ function Footer() {
             ))}
           </ul>
         </div>
-
         <div className="about-container">
           <p className="about">
             Audiophile is an all in one stop to fulfill your audio needs. We're
@@ -37,29 +36,26 @@ function Footer() {
           </p>
           <p className="copyright">Copyright 2021. All Rights Reserved</p>
         </div>
-
-        <ul className="socials" data-testid='social media links'>
+        <ul className="socials" data-testid="social media links">
           <li>
-            <button>
-              <span>facebook</span>
+            <button>.
               <Facebook />
             </button>
           </li>
 
           <li>
-            <button>
-              <span>twitter</span>
+            <button>.
               <Twitter />
             </button>
           </li>
 
           <li>
-            <button>
-              <span>instagram</span>
+            <button>.
               <Instagram />
             </button>
           </li>
         </ul>
+        z
       </div>
     </Container>
   );
@@ -115,7 +111,7 @@ const Container = styled.footer`
         border: none;
         background: inherit;
         cursor: pointer;
-        span{
+        span {
           display: none;
         }
       }
