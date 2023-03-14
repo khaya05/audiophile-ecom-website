@@ -10,7 +10,7 @@ function ZX9Speaker() {
         <div className="top">
           <img src={speakerImg} alt="zx9 speaker" />
         </div>
-        <main className="bottom">
+        <article className="bottom">
           <h2>
             zx9 <span>speaker</span>
           </h2>
@@ -19,13 +19,13 @@ function ZX9Speaker() {
             truly remarkable sound.
           </p>
           <SeeProduct class={'dark-btn'} id={6} />
-        </main>
+        </article>
       </div>
     </Wrapper>
   );
 }
 
-const Wrapper = styled.article`
+const Wrapper = styled.div`
   background: var(--orange-main);
   width: 87.2%;
   margin: 0 auto 24px;
