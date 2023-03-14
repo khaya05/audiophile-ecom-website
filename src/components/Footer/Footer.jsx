@@ -38,23 +38,23 @@ function Footer() {
           <p className="copyright">Copyright 2021. All Rights Reserved</p>
         </div>
 
-        <ul className="socials" data-testid='social media links' aria-label='social media links'>
+        <ul className="socials" data-testid='social media links'>
           <li>
-            <button href="#">
+            <button>
               <span>facebook</span>
               <Facebook />
             </button>
           </li>
 
           <li>
-            <button href="#">
+            <button>
               <span>twitter</span>
               <Twitter />
             </button>
           </li>
 
           <li>
-            <button href="#">
+            <button>
               <span>instagram</span>
               <Instagram />
             </button>

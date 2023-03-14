@@ -49,7 +49,7 @@ function Navbar() {
           </div>
         </div>
 
-        <ul aria-label="navigation">
+        <ul>
           {pages.map(({ page, id }) => (
             <li key={id}>
               <NavLink

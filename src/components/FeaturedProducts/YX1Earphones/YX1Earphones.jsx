@@ -15,15 +15,15 @@ function YX1Earphones() {
         </picture>
       </header>
 
-      <main className="bottom">
+      <article className="bottom">
         <h2>yx1 earphones</h2>
         <SeeProduct class={'dark-btn'} id={1} />
-      </main>
+      </article>
     </Container>
   );
 }
 
-const Container = styled.article`
+const Container = styled.div`
   width: 87.2%;
   display: flex;
   justify-content: space-between;

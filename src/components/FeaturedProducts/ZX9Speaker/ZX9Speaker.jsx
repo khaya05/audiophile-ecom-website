@@ -7,7 +7,7 @@ function ZX9Speaker() {
   return (
     <Wrapper>
       <div className="container">
-        <div className="top" aria-label='zx9 speaker'>
+        <div className="top">
           <img src={speakerImg} alt="zx9 speaker" />
         </div>
         <main className="bottom">
