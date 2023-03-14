@@ -13,7 +13,7 @@ function ZX7Speaker() {
   );
 }
 
-const Wrapper = styled.div`
+const Wrapper = styled.article`
   width: 87.2%;
   height: 320px;
   border-radius: 8px;
@@ -29,6 +29,7 @@ const Wrapper = styled.div`
     font-size: 28px;
     text-align: start;
     margin-bottom: 32px;
+    color:black;
   }
 
   .dark-btn {
@@ -47,6 +48,10 @@ const Wrapper = styled.div`
     padding-left: 63.5px;
     max-width: 1110px;
     background-image: url(${DesktopBgImage});
+  }
+
+  button:hover{
+    background-color: black;
   }
 `;
 

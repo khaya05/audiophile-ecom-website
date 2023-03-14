@@ -7,23 +7,23 @@ import DesktopImg from '../../../assets/home/desktop/image-earphones-yx1.jpg';
 function YX1Earphones() {
   return (
     <Container>
-      <div className="top">
+      <header className="top">
         <picture>
           <source media="(min-width:90em)" srcSet={DesktopImg}></source>
           <source media="(min-width:48em)" srcSet={TabImg}></source>
           <img src={MobileImg} alt="yx1 earphones" />
         </picture>
-      </div>
+      </header>
 
-      <div className="bottom">
+      <main className="bottom">
         <h2>yx1 earphones</h2>
         <SeeProduct class={'dark-btn'} id={1} />
-      </div>
+      </main>
     </Container>
   );
 }
 
-const Container = styled.div`
+const Container = styled.article`
   width: 87.2%;
   display: flex;
   justify-content: space-between;
@@ -73,6 +73,11 @@ const Container = styled.div`
     gap: 30px;
     max-width: 1110px;
     margin-bottom: 200px;
+  }
+
+  h2,
+  button {
+    color: black;
   }
 `;
 export default YX1Earphones;
